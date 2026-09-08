@@ -84,14 +84,13 @@
 
 </head>
 <body>
-    <div class="divButtons"></div>
+    <div class="divButtons">
 
     <script>
         const mainDiv = document.querySelector(".divButtons");
         let unitsSelected = [];
 
         setUpUnits();
-        
         
         function setUpUnits(){
             
@@ -104,46 +103,6 @@
                 currentButton.onclick = function() {decideColorOfButton(`unit${i}`);};
                 mainDiv.appendChild(currentButton);
             }
-
-            const bufferDiv1 = document.createElement("div");
-            mainDiv.appendChild(bufferDiv1);
-            const bufferDiv2 = document.createElement("div");
-            mainDiv.appendChild(bufferDiv2);
-            
-            const bottomButtons = document.createElement("div")
-            bottomButtons.className = "bottomDiv";
-            mainDiv.appendChild(bottomButtons);
-            
-            const bufferDiv3 = document.createElement("div");
-            mainDiv.appendChild(bufferDiv3);
-            const bufferDiv4 = document.createElement("div");
-            mainDiv.appendChild(bufferDiv4);
-            
-            const clearButton = document.createElement("button");
-            clearButton.className = "clearButton buttons";
-            clearButton.textContent = "Clear Selected Units";
-            clearButton.onclick = function() {clearUnits();};
-            bottomButtons.appendChild(clearButton);
-
-            const startSideButton = document.createElement("button");
-            startSideButton.className = "startSideButton buttons";
-            startSideButton.textContent = "Flip";
-            startSideButton.id = "side";
-            startSideButton.dataset.uniton = "true";
-            startSideButton.onclick = function() {decideColorOfButton("side");};
-            bottomButtons.appendChild(startSideButton);
-            
-            const openButton = document.createElement("button");
-            openButton.className = "openButton buttons";
-            openButton.textContent = "Open Selection";
-            openButton.onclick = function() {openSelected();};
-            bottomButtons.appendChild(openButton);
-            
-            const copyButton = document.createElement("button");
-            copyButton.className = "copyButton buttons";
-            copyButton.textContent = "🗐";
-            copyButton.onclick = function() {copySelected();};
-            bottomButtons.appendChild(copyButton)
         }
 
         function decideColorOfButton(buttonId){
@@ -200,4 +159,26 @@
             });
         }
     </script>
+    <div id="bufferDiv1"></div>
+    <div id="bufferDiv2"></div>
+    <div id="bottomButtons", class="bottomDiv">
+        <button id="clearButton", class="clearButton buttons", onclick="clearUnits()">CLEARME</button>
+        <button id="side", data-uniton="true", class="startSideButton buttons", onclick="decideColorOfButton">FLIPME</button>
+    </div>
+    <div id="bufferDiv3"></div>
+    <div id="bufferDiv4"></div>
+    <script>
+        const openButton = document.createElement("button");
+        openButton.className = "openButton buttons";
+        openButton.textContent = "Open Selection";
+        openButton.onclick = function() {openSelected();};
+        bottomButtons.appendChild(openButton);
+        
+        const copyButton = document.createElement("button");
+        copyButton.className = "copyButton buttons";
+        copyButton.textContent = "🗐";
+        copyButton.onclick = function() {copySelected();};
+        bottomButtons.appendChild(copyButton)
+    </script>
+    </div>
 </body>
