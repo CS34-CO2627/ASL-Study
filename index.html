@@ -121,13 +121,13 @@
             
             const clearButton = document.createElement("button");
             clearButton.className = "clearButton buttons";
-            clearButton.textContent = "Clear selected Units";
+            clearButton.textContent = "Clear Selected Units";
             clearButton.onclick = function() {clearUnits();};
             bottomButtons.appendChild(clearButton);
 
             const startSideButton = document.createElement("button");
             startSideButton.className = "startSideButton buttons";
-            startSideButton.textContent = "flip";
+            startSideButton.textContent = "Flip";
             startSideButton.id = "side";
             startSideButton.dataset.uniton = "true";
             startSideButton.onclick = function() {decideColorOfButton("side");};
@@ -135,7 +135,7 @@
             
             const openButton = document.createElement("button");
             openButton.className = "openButton buttons";
-            openButton.textContent = "Open selection";
+            openButton.textContent = "Open Selection";
             openButton.onclick = function() {openSelected();};
             bottomButtons.appendChild(openButton);
             
@@ -175,14 +175,14 @@
         function copySelected(){
             if (unitsSelected.length != 0){
                 navigator.clipboard.writeText(setUpLink());
-                alert(`Coppied "${setUpLink()}" to your clipboard`);
+                alert(`Copied "${setUpLink()}" to your clipboard`);
             } else {
                 alert("Not enough units to copy");
             }
         }
 
         function setUpLink(){
-            let link = "linkladidadida.com/?";
+            let link = "vidy2.github.io/?";
             if (document.getElementById("side").dataset.uniton === "false"){
                 link += "side=1&units=";
             } else {
