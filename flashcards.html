@@ -72,24 +72,40 @@
   <button class = "flipy" onclick="shuffle()" style = "font-size: 2vw; border-radius: 0.7vw; width:9vw; height: 4vw; left: 50%; top: 80%; position: fixed;">Shuffle</button>
   <button class = "flipy" id = "flipe" onclick="backflip()" style = "font-size: 2vw; border-radius: 0.7vw; width:15vw; height: 4vw; left: 50%; top: 90%; position: fixed;">Start on Answer</button>
   <script>
-    let anatomical;
+    let cardList = [];
     let backstart = false;
     const flipe = document.getElementById("flipe");
-    function flip(element){
-      element.classList.toggle("flipped");
-    }
-    async function fetchCards(){
-      const response = await fetch("./cards.json");
-      const data = await response.json();
-      anatomical = Object.values(data.anatomical_regions);
-      showCard();
-    }
     let currentCard = 0;
     const cardi = document.getElementById("cardi");
     const front = document.getElementById("front");
     const back = document.getElementById("back");
     const front_number = document.getElementById("front-number");
     const back_number = document.getElementById("back-number");
+    function flip(element){
+      element.classList.toggle("flipped");
+    }
+    async function fetchCards(){
+      const response = await fetch("./cards.json");
+      const data = await response.json();
+      const units = (new URLSearchParams(window.location.search).get("units") ?? "100").split(",").map(Number);
+      const baskstart = (new URLSearchParams(window.location.search).get("side") ?? "0");
+      if (baskstart === "1") {
+        cardi.style.transition = "none";
+        cardi.classList.add("flipped");
+        requestAnimationFrame(() => {
+          cardi.style.transition = "transform 0.8s";
+        });
+        flipe.textContent = "Start on Term";
+      }
+      console.log(units);
+      if (units.includes(1)){
+          cardList.push(...Object.values(data.anatomical_regions));
+      }
+      if (units.includes(2)){
+          cardList.push(...Object.values(data.directional_terms));
+      }
+      showCard();
+    }
     function backflip(){
       backstart = !backstart;
       if (backstart) {
@@ -102,13 +118,13 @@
       }
     }
     function showCard() {
-      front.lastChild.textContent = anatomical[currentCard].front;
-      back.lastChild.textContent = anatomical[currentCard].back;
+      front.lastChild.textContent = cardList[currentCard].front;
+      back.lastChild.textContent = cardList[currentCard].back;
       front_number.textContent = currentCard + 1;
       back_number.textContent = currentCard + 1;
     }
     function nextCard(){
-      if (currentCard < anatomical.length - 1) {
+      if (currentCard < cardList.length - 1) {
         currentCard++;
       } else {
         currentCard = 0;
@@ -129,7 +145,7 @@
       if (currentCard > 0) {
         currentCard--;
       } else {
-        currentCard = anatomical.length - 1;
+        currentCard = cardList.length - 1;
       }
       cardi.style.transition = "none";
       if (!backstart){
@@ -145,9 +161,9 @@
     }
     fetchCards();
     function shuffle(){
-      for (let i = anatomical.length - 1; i > 0; i--) {
+      for (let i = cardList.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [anatomical[i], anatomical[j]] = [anatomical[j], anatomical[i]];
+        [cardList[i], cardList[j]] = [cardList[j], cardList[i]];
       }
       currentCard = 0;
       cardi.style.transition = "none";
