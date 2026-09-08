@@ -166,7 +166,7 @@
 
         function openSelected(){
             if (unitsSelected.length != 0){
-                console.log(`Open website with the link of ${setUpLink()}`)
+                window.location.href = setUpLink();
             } else {
                 alert("Not enough units to open");
             }
@@ -182,15 +182,22 @@
         }
 
         function setUpLink(){
-            let link = "vidy2.github.io/?";
+            //cs34-co2627.github.io/ASL-Study/?
+            let link = "http://127.0.0.1:5500/flashcards.html?";
             if (document.getElementById("side").dataset.uniton === "false"){
                 link += "side=1&units=";
             } else {
                 link += "side=0&units="
             }
-            unitsSelected.forEach(button => {
-                link += button.id.slice(4) + ",";
-            });
+            // unitsSelected.forEach(button => {
+
+            //     link += button.id.slice(4) + ",";
+            // });
+
+            for (let i = 0;i < unitsSelected.length;i++){
+                link += unitsSelected[i].id.slice(4) + ((i === unitsSelected.length - 1) ? "" : ",");
+            }
+
             return link;
         }
 

@@ -39,9 +39,9 @@
         "37": {"front": "Dorsal", "back": "Back"}
     },
     "directional_terms": {
-        "1": {"front": "Superior", "back": "Above"},
-        "2": {"front": "Inferior", "back": "Belove"},
-        "3": {"front": "Medial", "back": "Middle"},
-        "4": {"front": "Lateral", "back": "Sides"}
+        "1": {"front": "Above", "back": "Superior"},
+        "2": {"front": "Below", "back": "Inferior"},
+        "3": {"front": "Middle", "back": "Medial"},
+        "4": {"front": "Sides", "back": "Lateral"}
     }
 }
