@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <style>
+    .container {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 40vw;
+      height: 24vw;
+      border: none;
+      perspective: 1000px;
+    }
+    .flipy {
+      transform: translateX(-50%);
+    }
+    .cardi {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+      cursor: pointer;
+    }
+    .cardi.flipped {
+      transform: rotateX(180deg);
+    }
+    .card {
+      position: absolute;
+      font-size: 3vw;
+      width: 100%;
+      border-radius: 4vw;
+      height: 100%;
+      border: none;
+      background-color: #f0f0f0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    #back {
+      transform: rotateX(180deg);
+    }
+    .fadein{
+      animation: fadein 1.5s ease-in-out;
+    }
+    @keyframes fadein{
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+  <title>Quiznet</title>
+</head>
+<body>
+  <div class ="container">
+    <div class = "cardi" id = "cardi" onclick="flip(this)">
+      <button class = "card" id="front">
+        <p id = "front-number" style = "font-size: 1.5vw; left: 4%; position: absolute; top: 3%;">1</p>
+        <p style = "font-size: 1.5vw; right: 4%; position: absolute; top: 3%;">Term</p>
+        Femoral
+      </button>
+      <button class = "card" id="back">
+        <p id = "back-number" style = "font-size: 1.5vw; left: 4%; position: absolute; top: 3%;">1</p>
+        <p style = "font-size: 1.5vw; right: 4%; position: absolute; top: 3%;">Answer</p>
+        Thigh
+      </button>
+    </div>
+  </div>
+  <div class = "nav">
+    <button onclick="nextCard()" style = "font-size: 2vw; border-radius: 0.7vw; width:7vw; height: 4vw; right: 20%; top: 50%; position: fixed;">Next</button>
+    <button onclick="previousCard()" style = "font-size: 2vw; border-radius: 0.7vw; width:9vw; height: 4vw; left: 18%; top: 50%; position: fixed;">Previous</button>
+  </div>
+  <button class = "flipy" onclick="shuffle()" style = "font-size: 2vw; border-radius: 0.7vw; width:9vw; height: 4vw; left: 50%; top: 80%; position: fixed;">Shuffle</button>
+  <button class = "flipy" id = "flipe" onclick="backflip()" style = "font-size: 2vw; border-radius: 0.7vw; width:15vw; height: 4vw; left: 50%; top: 90%; position: fixed;">Start on Answer</button>
+  <script>
+    let anatomical;
+    let backstart = false;
+    const flipe = document.getElementById("flipe");
+    function flip(element){
+      element.classList.toggle("flipped");
+    }
+    async function fetchCards(){
+      const response = await fetch("./cards.json");
+      const data = await response.json();
+      anatomical = Object.values(data.anatomical_regions);
+      showCard();
+    }
+    let currentCard = 0;
+    const cardi = document.getElementById("cardi");
+    const front = document.getElementById("front");
+    const back = document.getElementById("back");
+    const front_number = document.getElementById("front-number");
+    const back_number = document.getElementById("back-number");
+    function backflip(){
+      backstart = !backstart;
+      if (backstart) {
+        flipe.textContent = "Start on Term";
+        cardi.classList.add("flipped");
+      }
+      else {
+        flipe.textContent = "Start on Answer";
+        cardi.classList.remove("flipped");
+      }
+    }
+    function showCard() {
+      front.lastChild.textContent = anatomical[currentCard].front;
+      back.lastChild.textContent = anatomical[currentCard].back;
+      front_number.textContent = currentCard + 1;
+      back_number.textContent = currentCard + 1;
+    }
+    function nextCard(){
+      if (currentCard < anatomical.length - 1) {
+        currentCard++;
+      } else {
+        currentCard = 0;
+      }
+      cardi.style.transition = "none";
+      if (!backstart){
+        cardi.classList.remove("flipped");
+      }
+      else {
+        cardi.classList.add("flipped");
+      }
+      requestAnimationFrame(() => {
+        cardi.style.transition = "transform 0.8s";
+      });
+      showCard();
+    }
+    async function previousCard(){
+      if (currentCard > 0) {
+        currentCard--;
+      } else {
+        currentCard = anatomical.length - 1;
+      }
+      cardi.style.transition = "none";
+      if (!backstart){
+        cardi.classList.remove("flipped");
+      }
+      else {
+        cardi.classList.add("flipped");
+      }
+      requestAnimationFrame(() => {
+        cardi.style.transition = "transform 0.8s";
+      });
+      showCard();
+    }
+    fetchCards();
+    function shuffle(){
+      for (let i = anatomical.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [anatomical[i], anatomical[j]] = [anatomical[j], anatomical[i]];
+      }
+      currentCard = 0;
+      cardi.style.transition = "none";
+      document.getElementById("cardi").classList.remove("flipped");
+      requestAnimationFrame(() => {
+        cardi.style.transition = "transform 0.8s";
+      });
+      showCard();
+    }
+  </script>
+</body>
