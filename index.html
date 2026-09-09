@@ -46,19 +46,14 @@
         }
         function decideImageOfButton(buttonId){
             const myButt = document.getElementById(buttonId);
+            const myButtIcon = myButt.querySelector('img')
             if (myButt.dataset.uniton === "true"){
-                myButt.style.backgroundColor = "gray";
+                myButtIcon.src = "media/ENG.svg"
                 myButt.dataset.uniton = "false";
-                if (buttonId != "side"){
-                    unitsSelected.push(myButt);
-                }
             }
             else {
-                myButt.style.backgroundColor = "white";
                 myButt.dataset.uniton = "true";
-                if (buttonId != "side"){
-                    unitsSelected.splice(unitsSelected.indexOf(myButt),1);
-                }
+                myButtIcon.src = "media/ASL.svg"
             }
         }
 
@@ -110,7 +105,9 @@
     <div id="bufferDiv2"></div>
     <div id="bottomButtons" class="bottomDiv">
         <button id="clearButton" class="buttons setupButton" onclick="clearUnits()">Clear</button>
-        <button id="side" data-uniton="true" class="buttons setupButton" onclick="decideColorOfButton('side')">Flip</button>
+        <button id="side" data-uniton="true" class="buttons setupButton" onclick="decideImageOfButton('side')">
+            <img src="media/ASL.svg" style="height: 100%; width: 100%"/>
+        </button>
         <button id="openButton" class="buttons setupButton" onclick ="openSelected()">Start</button>
         <button id="copyButton"class="buttons setupButton" onclick="copySelected()">Copy</button>
     </div>
