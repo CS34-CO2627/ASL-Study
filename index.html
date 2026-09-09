@@ -16,7 +16,7 @@
         
         function setUpUnits(){
             
-            for (let i = 1;i <= 30;i++){
+            for (let i = 1; i <= 30; i++){
                 const currentButton = document.createElement("button");
                 currentButton.className = "unitButton buttons";
                 currentButton.id = `unit${i}`;
@@ -28,6 +28,23 @@
         }
 
         function decideColorOfButton(buttonId){
+            const myButt = document.getElementById(buttonId);
+            if (myButt.dataset.uniton === "true"){
+                myButt.style.backgroundColor = "gray";
+                myButt.dataset.uniton = "false";
+                if (buttonId != "side"){
+                    unitsSelected.push(myButt);
+                }
+            }
+            else {
+                myButt.style.backgroundColor = "white";
+                myButt.dataset.uniton = "true";
+                if (buttonId != "side"){
+                    unitsSelected.splice(unitsSelected.indexOf(myButt),1);
+                }
+            }
+        }
+        function decideImageOfButton(buttonId){
             const myButt = document.getElementById(buttonId);
             if (myButt.dataset.uniton === "true"){
                 myButt.style.backgroundColor = "gray";
@@ -92,10 +109,10 @@
     <div id="bufferDiv1"></div>
     <div id="bufferDiv2"></div>
     <div id="bottomButtons" class="bottomDiv">
-        <button id="clearButton" class="buttons" onclick="clearUnits()">CLEARME</button>
-        <button id="side" data-uniton="true" class="buttons" onclick="decideColorOfButton('side')">FLIPME</button>
-        <button id="openButton" class="buttons" onclick ="openSelected()">Open Selection</button>
-        <button id="copyButton"class="buttons" onclick="copySelected()">G</button>
+        <button id="clearButton" class="buttons setupButton" onclick="clearUnits()">Clear</button>
+        <button id="side" data-uniton="true" class="buttons setupButton" onclick="decideColorOfButton('side')">Flip</button>
+        <button id="openButton" class="buttons setupButton" onclick ="openSelected()">Start</button>
+        <button id="copyButton"class="buttons setupButton" onclick="copySelected()">Copy</button>
     </div>
     <div id="bufferDiv3"></div>
     <div id="bufferDiv4"></div>
