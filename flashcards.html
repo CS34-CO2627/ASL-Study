@@ -99,10 +99,10 @@
       }
       console.log(units);
       if (units.includes(1)){
-          cardList.push(...Object.values(data.anatomical_regions));
+          cardList.push(...Object.values(data.UnitA));
       }
       if (units.includes(2)){
-          cardList.push(...Object.values(data.directional_terms));
+          cardList.push(...Object.values(data.UnitB));
       }
       showCard();
     }
