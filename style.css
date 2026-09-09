@@ -1,0 +1,38 @@
+.divButtons{
+    background:grey;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, 5em);
+    justify-content:center;
+    gap:1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: .5em;
+    padding-right: .5em;
+    width:100%;
+    max-width:calc(5 * 5em + 4 * 1em);
+    place-items: center;
+    border-radius:1em;
+    margin:auto;
+    margin-bottom: 1em;
+}
+
+.bottomDiv{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    width: auto;
+    height: 5em;
+}
+
+.buttons{
+    background-color: white;
+    border-radius: 1em;
+    border-width: 2px;
+    border-color: black;
+    cursor: pointer;
+}
+
+.unitButton{
+    width:5em;
+    height:5em;
+}
