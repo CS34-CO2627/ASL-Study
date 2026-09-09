@@ -5,7 +5,7 @@
 
   <style>
     .divButtons{
-        background:blue;
+        background:grey;
         display:grid;
         grid-template-columns: repeat(auto-fit, 5em);
         justify-content:center;
@@ -17,67 +17,30 @@
         width:100%;
         max-width:calc(5 * 5em + 4 * 1em);
         place-items: center; 
-        box-shadow: 1em 6px 20px 8px rgba(0, 0, 0, .6);
         border-radius:1em;
         margin:auto;
+        margin-bottom: 1em;
     }
 
     .bottomDiv{
         display: flex; 
         justify-content: center;
         gap: 1em;
-        width: 100em;
+        width: auto;
         height: 5em;
     }
 
     .buttons{
         background-color: white;
         border-radius: 1em;
-        border-width: 0px;
+        border-width: 2px;
+        border-color: black;
         cursor: pointer;
     }
-    
-    
-    .colorButton{
-        width: 1.2em;
-        height: 1.2em;
-        font-size:4em;
-        display: flex;
-        justify-content: center;
-        align-items:center;
-    }
 
-    
     .unitButton{
         width:5em;
         height:5em;
-    }
-
-    .clearButton{
-        width:5.5em;
-        height:5em;
-        font-size: 1em;    
-    }
-
-    .startSideButton{
-        width:3em;
-        height:2.5em;
-        font-size: 2em;    
-    }
-    
-    .openButton{
-        width:5.5em;
-        height:2.5em;
-        font-size: 2em;
-    }
-    
-    .copyButton{
-        width:1.2em;
-        height:1.2em;
-        font-size: 3.3em;
-        display: flex;
-        justify-content: center;
-        align-items:center;
     }
 
   </style>
@@ -98,7 +61,7 @@
                 const currentButton = document.createElement("button");
                 currentButton.className = "unitButton buttons";
                 currentButton.id = `unit${i}`;
-                currentButton.textContent = `Unit ${i}`;
+                currentButton.textContent = `${i}`;
                 currentButton.dataset.uniton = "true";
                 currentButton.onclick = function() {decideColorOfButton(`unit${i}`);};
                 mainDiv.appendChild(currentButton);
@@ -165,26 +128,17 @@
             });
         }
     </script>
+    </div>
+    <div class="divButtons">
     <div id="bufferDiv1"></div>
     <div id="bufferDiv2"></div>
-    <div id="bottomButtons", class="bottomDiv">
-        <button id="clearButton", class="clearButton buttons", onclick="clearUnits()">CLEARME</button>
-        <button id="side", data-uniton="true", class="startSideButton buttons", onclick="decideColorOfButton">FLIPME</button>
+    <div id="bottomButtons" class="bottomDiv">
+        <button id="clearButton" class="buttons" onclick="clearUnits()">CLEARME</button>
+        <button id="side" data-uniton="true" class="buttons" onclick="decideColorOfButton('side')">FLIPME</button>
+        <button id="openButton" class="buttons" onclick ="openSelected()">Open Selection</button>
+        <button id="copyButton"class="buttons" onclick="copySelected()">G</button>
     </div>
     <div id="bufferDiv3"></div>
     <div id="bufferDiv4"></div>
-    <script>
-        const openButton = document.createElement("button");
-        openButton.className = "openButton buttons";
-        openButton.textContent = "Open Selection";
-        openButton.onclick = function() {openSelected();};
-        bottomButtons.appendChild(openButton);
-        
-        const copyButton = document.createElement("button");
-        copyButton.className = "copyButton buttons";
-        copyButton.textContent = "🗐";
-        copyButton.onclick = function() {copySelected();};
-        bottomButtons.appendChild(copyButton)
-    </script>
     </div>
 </body>
