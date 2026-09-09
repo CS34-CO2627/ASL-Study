@@ -1,47 +1,16 @@
 {
-    "anatomical_regions": {
-        "1": {"front":"Femoral", "back":"Thigh"},
-        "2": {"front": "Brachial", "back": "Arm"},
-        "3": {"front": "Antebrachial", "back": "Forearm"},
-        "4": {"front": "Orbital", "back": "Eyes"},
-        "5": {"front": "Frontal", "back": "Forehead"},
-        "6": {"front": "Facial", "back": "Face"},
-        "7": {"front": "Otic", "back": "Ear"},
-        "8": {"front": "Nasal", "back": "Nose"},
-        "9": {"front": "Cervical", "back": "Neck"},
-        "10": {"front": "Scapular", "back": "Shoulder blade"},
-        "11": {"front": "Acromial", "back": "Shoulder bone"},
-        "12": {"front": "Sternal", "back": "Breastbone"},
-        "13": {"front": "Mammary", "back": "Breasts"},
-        "14": {"front": "Olecranal", "back": "Back of elbow"},
-        "15": {"front": "Axillary", "back": "Armpit"},
-        "16": {"front": "Buccal", "back": "Cheeks"},
-        "17": {"front": "Antecubital", "back": "Front of elbow"},
-        "18": {"front": "Carpal", "back": "Wrist"},
-        "19": {"front": "Manual", "back": "Hand"},
-        "20": {"front": "Palmar", "back": "Palm"},
-        "21": {"front": "Phalangeas/Digits", "back": "Fingers"},
-        "22": {"front": "Coxal", "back": "Hip"},
-        "23": {"front": "Umbillical", "back": "Bellybutton"},
-        "24": {"front": "Trunk", "back": "Chest"},
-        "25": {"front": "Crural", "back": "Shin"},
-        "26": {"front": "Sural", "back": "Calf"},
-        "27": {"front": "Calcaneal", "back": "Heel bone"},
-        "28": {"front": "Mental", "back": "Chin"},
-        "29": {"front": "Cephalic", "back": "Top of head"},
-        "30": {"front": "Cranial", "back": "Back of head"},
-        "31": {"front": "Pedal", "back": "Foot"},
-        "32": {"front": "Tarsal", "back": "Ankle"},
-        "33": {"front": "Inguinal", "back": "Groin"},
-        "34": {"front": "Pubic", "back": "Pelvic"},
-        "35": {"front": "Popliteal", "back": "Hollow behind the knee"},
-        "36": {"front": "Plantar", "back": "Bottom of foot"},
-        "37": {"front": "Dorsal", "back": "Back"}
+    "UnitA": {
+        "1": {"front":"ENG A1", "back":"ASL A1"},
+        "2": {"front": "ENG A2", "back": "ASL A2"},
+        "3": {"front": "ENG A3", "back": "ASL A3"},
+        "4": {"front": "ENG A4", "back": "ASL A4"},
+        "5": {"front": "ENG A5", "back": "ASL A5"}
     },
-    "directional_terms": {
-        "1": {"front": "Above", "back": "Superior"},
-        "2": {"front": "Below", "back": "Inferior"},
-        "3": {"front": "Middle", "back": "Medial"},
-        "4": {"front": "Sides", "back": "Lateral"}
+    "UnitB": {
+        "1": {"front":"ENG B1", "back":"ASL B1"},
+        "2": {"front": "ENG B2", "back": "ASL B2"},
+        "3": {"front": "ENG B3", "back": "ASL B3"},
+        "4": {"front": "ENG B4", "back": "ASL B4"},
+        "5": {"front": "ENG B5", "back": "ASL B5"}
     }
 }
