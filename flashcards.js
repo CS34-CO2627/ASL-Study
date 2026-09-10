@@ -26,13 +26,19 @@ async function fetchCards(){
     const side = (new URLSearchParams(window.location.search).get("side") ?? "0");
     if (side === "0") {
         cardi.style.transition = "none";
-        cardi.classList.add("flipped");
         requestAnimationFrame(() => {
             cardi.style.transition = "transform 0.8s";
         });
         flipe.textContent = "Start on Term";
-        backstart = true;
         favicon.href = "media/ENG.svg";
+    }
+    else {
+        cardi.classList.add("flipped");
+        cardi.style.transition = "none";
+        requestAnimationFrame(() => {
+            cardi.style.transition = "transform 0.8s";
+        });
+        backstart = true;
     }
 
 
@@ -50,12 +56,12 @@ function backflip(){
     backstart = !backstart;
     if (backstart) {
         flipe.textContent = "Start on Term";
-        cardi.classList.add("flipped");
+        cardi.classList.remove("flipped");
         favicon.href = "media/ENG.svg";
     }
     else {
         flipe.textContent = "Start on Answer";
-        cardi.classList.remove("flipped");
+        cardi.classList.add("flipped");
         favicon.href = "media/ASL.svg";
     }
 }
