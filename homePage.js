@@ -20,6 +20,7 @@ function decideColorOfButton(buttonId){
     const myButt = document.getElementById(buttonId);
     if (myButt.dataset.uniton === "true"){
         myButt.style.backgroundColor = "gray";
+        myButt.style.color = "white";
         myButt.dataset.uniton = "false";
         if (buttonId != "side"){
             unitsSelected.push(myButt);
@@ -27,6 +28,7 @@ function decideColorOfButton(buttonId){
     }
     else {
         myButt.style.backgroundColor = "white";
+        myButt.style.color = "black";
         myButt.dataset.uniton = "true";
         if (buttonId != "side"){
             unitsSelected.splice(unitsSelected.indexOf(myButt),1);
