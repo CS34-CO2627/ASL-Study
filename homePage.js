@@ -9,10 +9,14 @@ function setUpUnits(){
         const currentButton = document.createElement("button");
         currentButton.className = "unitButton buttons";
         currentButton.id = `unit${i}`;
-        currentButton.textContent = `${i}`;
         currentButton.dataset.uniton = "true";
         currentButton.onclick = function() {decideColorOfButton(`unit${i}`);};
         mainDiv.appendChild(currentButton);
+
+        const myInsides = document.createElement("p");
+        myInsides.className = "unitText";
+        myInsides.textContent = `${i}`;
+        currentButton.appendChild(myInsides);
     }
 }
 

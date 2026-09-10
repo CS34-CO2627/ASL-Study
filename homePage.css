@@ -42,3 +42,8 @@
     width: 7em;
     height: 7em;
 }
+
+.unitText{
+    font-size: 20px;
+    font-weight: 500;
+}
