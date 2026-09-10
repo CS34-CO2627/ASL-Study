@@ -53,8 +53,8 @@ function backflip(){
 function showCard() {
     front.lastChild.textContent = cardList[currentCard].front;
     back.lastChild.textContent = cardList[currentCard].back;
-    front_number.textContent = currentCard + 1;
-    back_number.textContent = currentCard + 1;
+    front_number.textContent = (currentCard + 1) + " / " + cardList.length;
+    back_number.textContent = (currentCard + 1) + " / " + cardList.length;
 }
 
 function nextCard(){
