@@ -3,6 +3,7 @@ let backstart = false;
 const flipe = document.getElementById("flipe");
 let currentCard = 0;
 const cardi = document.getElementById("cardi");
+const favicon = document.getElementById('favicon');
 const front = document.getElementById("front");
 const back = document.getElementById("back");
 const front_number = document.getElementById("front-number");
@@ -10,6 +11,12 @@ const back_number = document.getElementById("back-number");
 
 function flip(element){
     element.classList.toggle("flipped");
+    if (element.classList.contains("flipped")){
+        favicon.href = "media/ENG.svg";
+    }
+    else {
+        favicon.href = "media/ASL.svg";
+    }
 }
 
 async function fetchCards(){
@@ -25,6 +32,7 @@ async function fetchCards(){
         });
         flipe.textContent = "Start on Term";
         backstart = true;
+        favicon.href = "media/ENG.svg";
     }
 
 
@@ -43,10 +51,12 @@ function backflip(){
     if (backstart) {
         flipe.textContent = "Start on Term";
         cardi.classList.add("flipped");
+        favicon.href = "media/ENG.svg";
     }
     else {
         flipe.textContent = "Start on Answer";
         cardi.classList.remove("flipped");
+        favicon.href = "media/ASL.svg";
     }
 }
 
