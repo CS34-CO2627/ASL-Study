@@ -29,7 +29,7 @@ async function fetchCards(){
         requestAnimationFrame(() => {
             cardi.style.transition = "transform 0.8s";
         });
-        flipe.textContent = "Start on Term";
+        flipe.textContent = "Start on ASL";
         favicon.href = "media/ENG.svg";
     }
     else {
