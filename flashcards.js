@@ -111,6 +111,18 @@ async function previousCard(){
     showCard();
 }
 
+window.addEventListener("keydown", (e) => {
+    if (e.key === " " && ['BUTTON', 'INPUT', 'A', 'SELECT'].includes(document.activeElement.tagName)) {
+        e.preventDefault();
+    }
+});
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === " ") {
+        cardi.classList.toggle("flipped");
+    }
+});
+
 function shuffle(){
     for (let i = cardList.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
