@@ -17,6 +17,12 @@ function setUpUnits(){
         myInsides.className = "unitText";
         myInsides.textContent = `${i}`;
         currentButton.appendChild(myInsides);
+
+        if (i % 10 === 0 && i !== 30){
+            const unitSeparator = document.createElement("div");
+            unitSeparator.className = "unitSeparator";
+            mainDiv.appendChild(unitSeparator);
+        }
     }
 }
 

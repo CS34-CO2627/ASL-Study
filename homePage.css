@@ -16,6 +16,13 @@
     margin-bottom: 1em;
 }
 
+.unitSeparator{
+    grid-column: 1 / -1;
+    width: 103%;
+    height: 5px;
+    background-color: #636363;
+}
+
 .bottomDiv {
     display: flex;
     flex-wrap: wrap;
