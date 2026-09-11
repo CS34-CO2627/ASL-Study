@@ -118,8 +118,18 @@ window.addEventListener("keydown", (e) => {
 });
 
 document.addEventListener("keydown", function(event) {
-    if (event.key === " ") {
-        cardi.classList.toggle("flipped");
+    switch (event.key){
+        case " ":
+            cardi.classList.toggle("flipped");
+            break;
+        case "ArrowLeft":
+        case "a":
+            previousCard();
+            break;
+        case "ArrowRight":
+        case "d":
+            nextCard();
+            break;
     }
 });
 
