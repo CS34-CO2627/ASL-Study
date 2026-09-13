@@ -15,14 +15,12 @@
     margin:auto;
     margin-bottom: 1em;
 }
-
 .unitSeparator{
     grid-column: 1 / -1;
     width: 103%;
     height: 5px;
     background-color: #636363;
 }
-
 .bottomDiv {
     display: flex;
     flex-wrap: wrap;
@@ -31,7 +29,6 @@
     grid-column: 1 / -1;
     width: 100%;
 }
-
 .buttons{
     background-color: white;
     border-radius: 1em;
@@ -39,18 +36,60 @@
     border-color: black;
     cursor: pointer;
 }
-
 .unitButton{
     width: 5em;
     height: 5em;
 }
-
 .setupButton{
     width: 7em;
     height: 7em;
 }
-
 .unitText{
     font-size: 20px;
     font-weight: 500;
+}
+.container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40vw;
+    height: 24vw;
+    border: none;
+    perspective: 1000px;
+}
+.flipy {
+    transform: translateX(-50%);
+}
+.cardi {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    cursor: pointer;
+}
+.cardi.flipped {
+    transform: rotateX(180deg);
+}
+.card {
+    position: absolute;
+    font-size: 3vw;
+    width: 100%;
+    border-radius: 4vw;
+    height: 100%;
+    border: none;
+    background-color: #f0f0f0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.fadein{
+    animation: fadein 1.5s ease-in-out;
+}
+#back {
+    transform: rotateX(180deg);
+}
+@keyframes fadein{
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
