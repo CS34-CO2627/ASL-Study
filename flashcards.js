@@ -4,17 +4,16 @@ const flipe = document.getElementById("flipe");
 let currentCard = 0;
 const cardi = document.getElementById("cardi");
 const favicon = document.getElementById('favicon');
-const front = document.getElementById("front");
-const back = document.getElementById("back");
-const front_number = document.getElementById("front-number");
-const back_number = document.getElementById("back-number");
+const aslside = document.getElementById("aslside");
+const engside = document.getElementById("engside");
+const aslside_number = document.getElementById("aslside-number");
+const engside_number = document.getElementById("engside-number");
 
 function flip(element){
     element.classList.toggle("flipped");
     if (element.classList.contains("flipped")){
         favicon.href = "media/ENG.svg";
-    }
-    else {
+    } else {
         favicon.href = "media/ASL.svg";
     }
 }
@@ -31,8 +30,7 @@ async function fetchCards(){
         });
         flipe.textContent = "Start on ASL";
         favicon.href = "media/ENG.svg";
-    }
-    else {
+    } else {
         cardi.classList.add("flipped");
         cardi.style.transition = "none";
         requestAnimationFrame(() => {
@@ -41,13 +39,11 @@ async function fetchCards(){
         backstart = true;
     }
 
-
     for (let i = 1;i <= 30;i++){
         if (units.includes(i)){
             cardList.push(...Object.values(data[`Unit${i}`]))
         }
     }
-
     shuffle();
     showCard();
 }
@@ -58,8 +54,7 @@ function backflip(){
         flipe.textContent = "Start on English";
         cardi.classList.add("flipped");
         favicon.href = "media/ENG.svg";
-    }
-    else {
+    } else {
         flipe.textContent = "Start on ASL";
         cardi.classList.remove("flipped");
         favicon.href = "media/ASL.svg";
@@ -67,10 +62,10 @@ function backflip(){
 }
 
 function showCard() {
-    front.lastChild.textContent = cardList[currentCard].front;
-    back.lastChild.textContent = cardList[currentCard].back;
-    front_number.textContent = (currentCard + 1) + " / " + cardList.length;
-    back_number.textContent = (currentCard + 1) + " / " + cardList.length;
+    aslside.lastChild.textContent = cardList[currentCard].aslside;
+    engside.lastChild.textContent = cardList[currentCard].engside;
+    aslside_number.textContent = (currentCard + 1) + " / " + cardList.length;
+    engside_number.textContent = (currentCard + 1) + " / " + cardList.length;
 }
 
 function nextCard(){
@@ -81,13 +76,12 @@ function nextCard(){
     }
     cardi.style.transition = "none";
     if (!backstart){
-    cardi.classList.remove("flipped");
-    }
-    else {
-    cardi.classList.add("flipped");
+        cardi.classList.remove("flipped");
+    } else {
+        cardi.classList.add("flipped");
     }
     requestAnimationFrame(() => {
-    cardi.style.transition = "transform 0.8s";
+        cardi.style.transition = "transform 0.8s";
     });
     showCard();
 }
