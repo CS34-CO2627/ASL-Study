@@ -1,19 +1,39 @@
-.divButtons{
+.titleDiv{
+    text-align: center;
     background:grey;
     display:grid;
-    grid-template-columns: repeat(auto-fit, 5em);
+    font-size: clamp(0.01rem, 6vw, 1.2rem);
+    grid-template-rows: repeat(auto-fit, 5rem);
     justify-content:center;
-    gap:1em;
+    gap:1px;
     padding-top: 1em;
     padding-bottom: 1em;
-    padding-left: .5em;
-    padding-right: .5em;
+    padding-left: .5rem;
+    padding-right: .5rem;
     width:80%;
-    max-width:calc(5 * 5em + 4 * 1em);
+    max-width:480px;
     place-items: center;
     border-radius:1em;
     margin:auto;
     margin-bottom: 1em;
+}
+.divButtons{
+    background:grey;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, 5rem);
+    justify-content:center;
+    gap:1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    width:80%;
+    max-width:480px;
+    /* max-width:calc(5 * 5em + 4 * 1em); */
+    place-items: center;
+    border-radius:1rem;
+    margin:auto;
+    margin-bottom: 1rem;
 }
 .unitSeparator{
     grid-column: 1 / -1;
