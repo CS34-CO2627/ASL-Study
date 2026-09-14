@@ -55,13 +55,13 @@ async function fetchCards(){
 function backflip(){
     backstart = !backstart;
     if (backstart) {
-        flipe.textContent = "Start on ASL";
-        cardi.classList.remove("flipped");
+        flipe.textContent = "Start on English";
+        cardi.classList.add("flipped");
         favicon.href = "media/ENG.svg";
     }
     else {
-        flipe.textContent = "Start on English";
-        cardi.classList.add("flipped");
+        flipe.textContent = "Start on ASL";
+        cardi.classList.remove("flipped");
         favicon.href = "media/ASL.svg";
     }
 }
