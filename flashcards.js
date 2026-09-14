@@ -70,16 +70,19 @@ function showCard() {
 
 function nextCard(){
     if (currentCard < cardList.length - 1) {
-    currentCard++;
+        currentCard++;
     } else {
-    currentCard = 0;
+        currentCard = 0;
     }
+
     cardi.style.transition = "none";
+    
     if (!backstart){
         cardi.classList.remove("flipped");
     } else {
         cardi.classList.add("flipped");
     }
+
     requestAnimationFrame(() => {
         cardi.style.transition = "transform 0.8s";
     });
@@ -88,19 +91,21 @@ function nextCard(){
 
 async function previousCard(){
     if (currentCard > 0) {
-    currentCard--;
+        currentCard--;
     } else {
-    currentCard = cardList.length - 1;
+        currentCard = cardList.length - 1;
     }
+    
     cardi.style.transition = "none";
+    
     if (!backstart){
-    cardi.classList.remove("flipped");
+        cardi.classList.remove("flipped");
+    } else {
+        cardi.classList.add("flipped");
     }
-    else {
-    cardi.classList.add("flipped");
-    }
+    
     requestAnimationFrame(() => {
-    cardi.style.transition = "transform 0.8s";
+        cardi.style.transition = "transform 0.8s";
     });
     showCard();
 }
@@ -114,6 +119,10 @@ window.addEventListener("keydown", (e) => {
 document.addEventListener("keydown", function(event) {
     switch (event.key){
         case " ":
+        case "w":
+        case "s":
+        case "ArrowUp":
+        case "ArrowDown":
             cardi.classList.toggle("flipped");
             break;
         case "ArrowLeft":
