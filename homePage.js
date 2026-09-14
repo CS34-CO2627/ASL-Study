@@ -1,4 +1,4 @@
-const mainDiv = document.querySelector(".divButtons");
+const mainDiv = document.getElementById("setupButtonDiv");
 let unitsSelected = [];
 
 setUpUnits();
