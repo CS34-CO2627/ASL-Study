@@ -136,6 +136,10 @@ document.addEventListener("keydown", function(event) {
     }
 });
 
+function goBack(){
+    window.location.href = "index.html";
+}
+
 function shuffle(){
     for (let i = cardList.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
