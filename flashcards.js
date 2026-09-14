@@ -2,7 +2,7 @@ let cardList = [];
 let backstart = false;
 const flipe = document.getElementById("flipe");
 let currentCard = 0;
-const cardi = document.getElementById("cardi");
+const cardit = document.getElementById("cardi");
 const favicon = document.getElementById('favicon');
 const aslside = document.getElementById("aslside");
 const engside = document.getElementById("engside");
@@ -24,17 +24,17 @@ async function fetchCards(){
     const units = (new URLSearchParams(window.location.search).get("units") ?? "100").split(",").map(Number);
     const side = (new URLSearchParams(window.location.search).get("side") ?? "0");
     if (side === "0") {
-        cardi.style.transition = "none";
+        cardit.style.transition = "none";
         requestAnimationFrame(() => {
-            cardi.style.transition = "transform 0.8s";
+            cardit.style.transition = "transform 0.8s";
         });
         flipe.textContent = "Start on ASL";
         favicon.href = "media/ENG.svg";
     } else {
-        cardi.classList.add("flipped");
-        cardi.style.transition = "none";
+        cardit.classList.add("flipped");
+        cardit.style.transition = "none";
         requestAnimationFrame(() => {
-            cardi.style.transition = "transform 0.8s";
+            cardit.style.transition = "transform 0.8s";
         });
         backstart = true;
     }
@@ -52,11 +52,11 @@ function backflip(){
     backstart = !backstart;
     if (backstart) {
         flipe.textContent = "Start on English";
-        cardi.classList.add("flipped");
+        cardit.classList.add("flipped");
         favicon.href = "media/ENG.svg";
     } else {
         flipe.textContent = "Start on ASL";
-        cardi.classList.remove("flipped");
+        cardit.classList.remove("flipped");
         favicon.href = "media/ASL.svg";
     }
 }
@@ -75,16 +75,16 @@ function nextCard(){
         currentCard = 0;
     }
 
-    cardi.style.transition = "none";
+    cardit.style.transition = "none";
     
     if (!backstart){
-        cardi.classList.remove("flipped");
+        cardit.classList.remove("flipped");
     } else {
-        cardi.classList.add("flipped");
+        cardit.classList.add("flipped");
     }
 
     requestAnimationFrame(() => {
-        cardi.style.transition = "transform 0.8s";
+        cardit.style.transition = "transform 0.8s";
     });
     showCard();
 }
@@ -96,16 +96,16 @@ async function previousCard(){
         currentCard = cardList.length - 1;
     }
     
-    cardi.style.transition = "none";
+    cardit.style.transition = "none";
     
     if (!backstart){
-        cardi.classList.remove("flipped");
+        cardit.classList.remove("flipped");
     } else {
-        cardi.classList.add("flipped");
+        cardit.classList.add("flipped");
     }
     
     requestAnimationFrame(() => {
-        cardi.style.transition = "transform 0.8s";
+        cardit.style.transition = "transform 0.8s";
     });
     showCard();
 }
@@ -123,7 +123,7 @@ document.addEventListener("keydown", function(event) {
         case "s":
         case "ArrowUp":
         case "ArrowDown":
-            cardi.classList.toggle("flipped");
+            cardit.classList.toggle("flipped");
             break;
         case "ArrowLeft":
         case "a":
@@ -146,14 +146,14 @@ function shuffle(){
     [cardList[i], cardList[j]] = [cardList[j], cardList[i]];
     }
     currentCard = 0;
-    cardi.style.transition = "none";
+    cardit.style.transition = "none";
     if (backstart){
-        cardi.classList.add("flipped");
+        cardit.classList.add("flipped");
     } else {
-        cardi.classList.remove("flipped");
+        cardit.classList.remove("flipped");
     }
     requestAnimationFrame(() => {
-    cardi.style.transition = "transform 0.8s";
+    cardit.style.transition = "transform 0.8s";
     });
     showCard();
 }
