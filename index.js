@@ -11,7 +11,13 @@ function setUpUnits(){
         currentButton.id = `unit${i}`;
         currentButton.dataset.uniton = "true";
         currentButton.onclick = function() {decideColorOfButton(`unit${i}`);};
-        mainDiv.appendChild(currentButton);
+        if (i <= 10){
+            document.getElementById("upToTen Units").appendChild(currentButton);
+        } else if (i <= 20){
+            document.getElementById("upToTwenty Units").appendChild(currentButton);
+        } else {
+            document.getElementById("upToThirty Units").appendChild(currentButton);
+        }
 
         const myInsides = document.createElement("p");
         myInsides.className = "unitText";
