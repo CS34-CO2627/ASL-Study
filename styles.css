@@ -78,8 +78,11 @@
     border: none;
     perspective: 1000px;
 }
-.flipy {
-    transform: translateX(-50%);
+.homeButton{
+    font-size: clamp(1vw, 2vw, 3vw); 
+    border-radius: 0.7vw; 
+    width:17vw; 
+    height: 4vw; 
 }
 .cardi {
     position: relative;
@@ -102,6 +105,58 @@
     background-color: #f0f0f0;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    outline: 2px solid grey;
+}
+.sideNumber {
+    font-size: 1.5vw; 
+    left: 4%; 
+    position: absolute; 
+    top: 3%;
+}
+.card p {
+    font-size: 1.5vw; 
+    right: 4%; 
+    position: absolute; 
+    top: 3%;
+}
+.next {
+    font-size: 2vw; 
+    border-radius: 0.7vw; 
+    width:7vw; 
+    height: 4vw; 
+    right: 20%; 
+    top: 50%; 
+    position: fixed;
+}
+.prev {
+    font-size: 2vw; 
+    border-radius: 0.7vw; 
+    width:9vw; 
+    height: 4vw; 
+    left: 18%; 
+    top: 50%; 
+    position: fixed;
+}
+.shuffle {
+    transform: translateX(-50%);
+    font-size: 2vw; 
+    border-radius: 0.7vw; 
+    width:9vw; 
+    height: 4vw; 
+    left: 50%; 
+    top: 80%; 
+    position: fixed;
+
+}
+.flipStartTerm {
+    transform: translateX(-50%);
+    font-size: clamp(1vw, 2vw, 3vw); 
+    border-radius: 0.7vw; 
+    width:17vw; 
+    height: 4vw; 
+    left: 50%; 
+    top: 90%; 
+    position: fixed;
 }
 .fadein{
     animation: fadein 1.5s ease-in-out;

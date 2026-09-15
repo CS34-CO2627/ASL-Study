@@ -1,6 +1,6 @@
 let cardList = [];
 let backstart = false;
-const flipe = document.getElementById("flipe");
+const flipStartTerm = document.querySelector(".flipStartTerm");
 let currentCard = 0;
 const cardit = document.getElementById("cardi");
 const favicon = document.getElementById('favicon');
@@ -28,7 +28,7 @@ async function fetchCards(){
         requestAnimationFrame(() => {
             cardit.style.transition = "transform 0.8s";
         });
-        flipe.textContent = "Start on ASL";
+        flipStartTerm.textContent = "Start on ASL";
         favicon.href = "media/ENG.svg";
     } else {
         cardit.classList.add("flipped");
@@ -51,11 +51,11 @@ async function fetchCards(){
 function backflip(){
     backstart = !backstart;
     if (backstart) {
-        flipe.textContent = "Start on English";
+        flipStartTerm.textContent = "Start on English";
         cardit.classList.add("flipped");
         favicon.href = "media/ENG.svg";
     } else {
-        flipe.textContent = "Start on ASL";
+        flipStartTerm.textContent = "Start on ASL";
         cardit.classList.remove("flipped");
         favicon.href = "media/ASL.svg";
     }
@@ -76,7 +76,7 @@ function nextCard(){
     }
 
     cardit.style.transition = "none";
-    
+
     if (!backstart){
         cardit.classList.remove("flipped");
     } else {
@@ -95,15 +95,15 @@ async function previousCard(){
     } else {
         currentCard = cardList.length - 1;
     }
-    
+
     cardit.style.transition = "none";
-    
+
     if (!backstart){
         cardit.classList.remove("flipped");
     } else {
         cardit.classList.add("flipped");
     }
-    
+
     requestAnimationFrame(() => {
         cardit.style.transition = "transform 0.8s";
     });
