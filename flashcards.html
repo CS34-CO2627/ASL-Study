@@ -1,45 +1,45 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Quiznet</title>
-  <link rel="stylesheet" href="index.css">
-  <link rel="icon" id = "favicon" type="image/svg+xml" href="media/ASL.svg">
+  <title>ASL Study - Flashcards</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" id="favicon" type="image/svg+xml" href="media/ASL.svg">
 </head>
 <body>
-  
-  <div class ="container">
-    <div class = "cardi" id = "cardi" onclick="flip(this)">
-      <button class = "card" id="aslside">
-        <p id = "aslside-number" style = "font-size: 1.5vw; left: 4%; position: absolute; top: 3%;"></p>
-        
-        <p style = "font-size: 1.5vw; right: 4%; position: absolute; top: 3%;">Term</p>
+
+	<div class ="container">
+		<div class="cardi" id = "cardi" onclick="flip(this)">
+			<button class="card" id="aslside">
+				<p id="aslside-number" class="sideNumber"></p>
+
+        <p>Term</p>
       </button>
-      
-      <button class = "card" id="engside">
-        <p id = "engside-number" style = "font-size: 1.5vw; left: 4%; position: absolute; top: 3%;"></p>
-      
-        <p style = "font-size: 1.5vw; right: 4%; position: absolute; top: 3%;">Answer</p>
+
+      <button class="card" id="engside">
+        <p id="engside-number" class="sideNumber"></p>
+
+        <p>Answer</p>
       </button>
     </div>
   </div>
-  
-  
-  <div class = "nav">
-    <button onclick="nextCard()" style = "font-size: 2vw; border-radius: 0.7vw; width:7vw; height: 4vw; right: 20%; top: 50%; position: fixed;">Next</button>
-    
-    <button onclick="previousCard()" style = "font-size: 2vw; border-radius: 0.7vw; width:9vw; height: 4vw; left: 18%; top: 50%; position: fixed;">Previous</button>
-  </div>
-  
-  <div class = "extraButtonsDiv">
-    <button class = "flipy" onclick="shuffle()" style = "font-size: 2vw; border-radius: 0.7vw; width:9vw; height: 4vw; left: 50%; top: 80%; position: fixed;">Shuffle</button>
-    
-    <button class = "flipy" id = "flipe" onclick="backflip()" style = "font-size: clamp(1vw, 2vw, 3vw); border-radius: 0.7vw; width:17vw; height: 4vw; left: 50%; top: 90%; position: fixed;">Start on English</button>
 
-    <button class = "flipy" onclick="goBack()">Go back button super importanty</button>
+
+  <div class="nav">
+    <button onclick="nextCard()" class="next">Next</button>
+
+    <button onclick="previousCard()" class="prev">Previous</button>
   </div>
-  
+
+  <div class="extraButtonsDiv">
+    <button class="shuffle" onclick="shuffle()">Shuffle</button>
+
+    <button class="flipStartTerm" onclick="backflip()">Start on English</button>
+
+    <button class="homeButton"onclick="goBack()">Unit Selection</button>
+  </div>
+
   <script src="flashcards.js"></script>
-  
+
 </body>
 </html>

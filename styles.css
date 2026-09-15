@@ -1,0 +1,170 @@
+.titleDiv{
+    text-align: center;
+    background:grey;
+    display:grid;
+    font-size: clamp(0.01rem, 6vw, 1.2rem);
+    grid-template-rows: repeat(auto-fit, 5rem);
+    justify-content:center;
+    gap:1px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    width:80%;
+    max-width:480px;
+    place-items: center;
+    border-radius:1em;
+    margin:auto;
+    margin-bottom: 1em;
+}
+.divButtons{
+    background:grey;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, 5rem);
+    justify-content:center;
+    gap:1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    width:80%;
+    max-width:480px;
+    /* max-width:calc(5 * 5em + 4 * 1em); */
+    place-items: center;
+    border-radius:1rem;
+    margin:auto;
+    margin-bottom: 1rem;
+}
+.unitSeparator{
+    grid-column: 1 / -1;
+    width: 103%;
+    height: 5px;
+    background-color: #636363;
+}
+.bottomDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    grid-column: 1 / -1;
+    width: 100%;
+}
+.buttons{
+    background-color: white;
+    border-radius: 1em;
+    border-width: 2px;
+    border-color: black;
+    cursor: pointer;
+}
+.unitButton{
+    width: 5em;
+    height: 5em;
+}
+.setupButton{
+    width: 7em;
+    height: 7em;
+}
+.unitText{
+    font-size: 20px;
+    font-weight: 500;
+}
+.container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40vw;
+    height: 24vw;
+    border: none;
+    perspective: 1000px;
+}
+.homeButton{
+    font-size: clamp(1vw, 2vw, 3vw); 
+    border-radius: 0.7vw; 
+    width:17vw; 
+    height: 4vw; 
+}
+.cardi {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    cursor: pointer;
+}
+.cardi.flipped {
+    transform: rotateX(180deg);
+}
+.card {
+    position: absolute;
+    font-size: 3vw;
+    width: 100%;
+    border-radius: 4vw;
+    height: 100%;
+    border: none;
+    background-color: #f0f0f0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    outline: 2px solid grey;
+}
+.sideNumber {
+    font-size: 1.5vw; 
+    left: 4%; 
+    position: absolute; 
+    top: 3%;
+}
+.card p {
+    font-size: 1.5vw; 
+    right: 4%; 
+    position: absolute; 
+    top: 3%;
+}
+.next {
+    font-size: 2vw; 
+    border-radius: 0.7vw; 
+    width:7vw; 
+    height: 4vw; 
+    right: 20%; 
+    top: 50%; 
+    position: fixed;
+}
+.prev {
+    font-size: 2vw; 
+    border-radius: 0.7vw; 
+    width:9vw; 
+    height: 4vw; 
+    left: 18%; 
+    top: 50%; 
+    position: fixed;
+}
+.shuffle {
+    transform: translateX(-50%);
+    font-size: 2vw; 
+    border-radius: 0.7vw; 
+    width:9vw; 
+    height: 4vw; 
+    left: 50%; 
+    top: 80%; 
+    position: fixed;
+
+}
+.flipStartTerm {
+    transform: translateX(-50%);
+    font-size: clamp(1vw, 2vw, 3vw); 
+    border-radius: 0.7vw; 
+    width:17vw; 
+    height: 4vw; 
+    left: 50%; 
+    top: 90%; 
+    position: fixed;
+}
+.fadein{
+    animation: fadein 1.5s ease-in-out;
+}
+#engside {
+    transform: rotateX(180deg);
+}
+@keyframes fadein{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
