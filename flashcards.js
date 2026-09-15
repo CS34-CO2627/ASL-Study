@@ -31,8 +31,8 @@ async function fetchCards(){
         flipStartTerm.textContent = "Start on ASL";
         favicon.href = "media/ENG.svg";
     } else {
-        cardit.classList.add("flipped");
         cardit.style.transition = "none";
+        cardit.classList.add("flipped");
         requestAnimationFrame(() => {
             cardit.style.transition = "transform 0.8s";
         });
