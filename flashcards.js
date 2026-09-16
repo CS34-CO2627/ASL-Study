@@ -11,11 +11,6 @@ const engside_number = document.getElementById("engside-number");
 
 function flip(element){
     element.classList.toggle("flipped");
-    if (element.classList.contains("flipped")){
-        favicon.href = "media/ENG.svg";
-    } else {
-        favicon.href = "media/ASL.svg";
-    }
 }
 
 async function fetchCards(){
