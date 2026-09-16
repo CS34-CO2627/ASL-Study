@@ -36,16 +36,16 @@
     margin-top: 0;
     top: 0;
 }
-.setupButtonDiv1{
+.unitButtonDiv1{
     border-bottom: 0.4rem solid #636363;
     margin-bottom: 0;
     border-radius: 1rem 1rem 0 0;
 }
-.setupButtonDiv2{
+.unitButtonDiv2{
     margin-bottom: 0;
     border-radius: 0;
 }
-.setupButtonDiv3{
+.unitButtonDiv3{
     border-top: 0.4rem solid #636363;
     border-radius: 0 0 1rem 1rem;
 }
@@ -76,7 +76,7 @@
     font-size: 20px;
     font-weight: 500;
 }
-.container {
+.PerspectiveDiv {
     position: fixed;
     left: 50%;
     top: 50%;
@@ -109,10 +109,10 @@ body {
     transition: transform 0.8s;
     cursor: pointer;
 }
-.cardi.flipped {
+.frontOfCardDiv.flipped {
     transform: rotateX(180deg);
 }
-.card {
+.sideOfCardButton {
     position: absolute;
     font-size: 3vw;
     width: 100%;
@@ -130,13 +130,13 @@ body {
     position: absolute;
     top: 3%;
 }
-.card p {
+.sideOfCardButton p {
     font-size: 1.5vw;
     right: 4%;
     position: absolute;
     top: 3%;
 }
-.next {
+.nextCardButton {
     font-size: 2vw;
     border-radius: 0.7vw;
     width: 7vw;
@@ -145,7 +145,7 @@ body {
     top: 50%;
     position: fixed;
 }
-.prev {
+.previousCardButton {
     font-size: 2vw;
     border-radius: 0.7vw;
     width: 9vw;
