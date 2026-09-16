@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
   <title>ASL Study - Flashcards</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" id="favicon" type="image/svg+xml" href="media/ASL.svg">
@@ -13,13 +13,13 @@
 			<button class="card" id="aslside">
 				<p id="aslside-number" class="sideNumber"></p>
 
-        <p>Term</p>
+        <p id="aslside-answer">Term</p>
       </button>
 
       <button class="card" id="engside">
         <p id="engside-number" class="sideNumber"></p>
 
-        <p>Answer</p>
+        <p id="engside-answer">Answer</p>
       </button>
     </div>
   </div>
@@ -31,13 +31,19 @@
     <button onclick="previousCard()" class="prev">Previous</button>
   </div>
 
-  <div class="extraButtonsDiv">
-    <button class="shuffle" onclick="shuffle()">Shuffle</button>
 
-    <button class="flipStartTerm" onclick="backflip()">Start on English</button>
+	<div id="unitButtonDiv" class="divButtons extraButtonsDiv">
+		<div id="bottomButtons" class="bottomDiv">
+			<button class="buttons setupButton" onclick="shuffle()">Shuffle</button>
 
-    <button class="homeButton"onclick="goBack()">Unit Selection</button>
-  </div>
+<!--		// decideImageOfButton('whichFront')-->
+			<button id="whichFront" data-aslorenglish="asl" class="buttons setupButton" onclick="backflip()">
+				<img src="media/ASL.svg" style="height: 100%; width: 100%"/>
+			</button>
+
+			<button class="buttons setupButton" onclick="goBack()">Unit Selection</button>
+		</div>
+	</div>
 
   <script src="flashcards.js"></script>
 
