@@ -35,24 +35,18 @@
     margin-bottom: 1rem;
 }
 .setupButtonDiv1{
-    border-bottom: 0.4rem solid #636363; 
-    margin-bottom: 0; 
+    border-bottom: 0.4rem solid #636363;
+    margin-bottom: 0;
     border-radius: 1rem 1rem 0 0;
 }
 .setupButtonDiv2{
-    margin-bottom: 0; 
+    margin-bottom: 0;
     border-radius: 0;
 }
 .setupButtonDiv3{
-    border-top: 0.4rem solid #636363; 
+    border-top: 0.4rem solid #636363;
     border-radius: 0 0 1rem 1rem;
 }
-/* .unitSeparator{
-    grid-column: 1 / -1;
-    width: 103%;
-    height: 5px;
-    background-color: #636363;
-} */
 .bottomDiv {
     display: flex;
     flex-wrap: wrap;
@@ -90,12 +84,6 @@
     border: none;
     perspective: 1000px;
 }
-.homeButton{
-    font-size: clamp(1vw, 2vw, 3vw); 
-    border-radius: 0.7vw; 
-    width: 17vw; 
-    height: 4vw; 
-}
 .cardi {
     position: relative;
     width: 100%;
@@ -120,54 +108,33 @@
     outline: 2px solid grey;
 }
 .sideNumber {
-    font-size: 1.5vw; 
-    left: 4%; 
-    position: absolute; 
+    font-size: 1.5vw;
+    left: 4%;
+    position: absolute;
     top: 3%;
 }
 .card p {
-    font-size: 1.5vw; 
-    right: 4%; 
-    position: absolute; 
+    font-size: 1.5vw;
+    right: 4%;
+    position: absolute;
     top: 3%;
 }
 .next {
-    font-size: 2vw; 
-    border-radius: 0.7vw; 
-    width: 7vw; 
-    height: 4vw; 
-    right: 20%; 
-    top: 50%; 
+    font-size: 2vw;
+    border-radius: 0.7vw;
+    width: 7vw;
+    height: 4vw;
+    right: 20%;
+    top: 50%;
     position: fixed;
 }
 .prev {
-    font-size: 2vw; 
-    border-radius: 0.7vw; 
-    width: 9vw; 
-    height: 4vw; 
-    left: 18%; 
-    top: 50%; 
-    position: fixed;
-}
-.shuffle {
-    transform: translateX(-50%);
-    font-size: 2vw; 
-    border-radius: 0.7vw; 
-    width: 9vw; 
-    height: 4vw; 
-    left: 50%; 
-    top: 80%; 
-    position: fixed;
-
-}
-.flipStartTerm {
-    transform: translateX(-50%);
-    font-size: clamp(1vw, 2vw, 3vw); 
-    border-radius: 0.7vw; 
-    width:17vw; 
-    height: 4vw; 
-    left: 50%; 
-    top: 90%; 
+    font-size: 2vw;
+    border-radius: 0.7vw;
+    width: 9vw;
+    height: 4vw;
+    left: 18%;
+    top: 50%;
     position: fixed;
 }
 .fadein{
@@ -179,4 +146,10 @@
 @keyframes fadein{
     from {opacity: 0;}
     to {opacity: 1;}
+}
+#unitButtonDiv {
+	position: fixed;
+	bottom: 1rem;
+	left: 50%;
+	transform: translateX(-50%);
 }

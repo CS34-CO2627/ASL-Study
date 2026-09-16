@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
     <title>ASL Study - Units</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="media/ASL.svg">
@@ -19,13 +19,13 @@
     <div id="unitButtonDiv" class="divButtons">
         <div id="bottomButtons" class="bottomDiv">
             <button id="clearButton" class="buttons setupButton" onclick="clearUnits()">Clear</button>
-        
-            <button id="side" data-uniton="true" class="buttons setupButton" onclick="decideImageOfButton('side')">
+
+            <button id="whichFront" data-aslorenglish="asl" class="buttons setupButton" onclick="decideImageOfButton('whichFront')">
                 <img src="media/ASL.svg" style="height: 100%; width: 100%"/>
             </button>
-        
+
             <button id="openButton" class="buttons setupButton" onclick="openSelected()">Start</button>
-        
+
             <button id="copyButton"class="buttons setupButton" onclick="copySelected()">
                 <img src="media/CLIPBOARD.svg" style="height: 100%; width: 100%"/>
             </button>
