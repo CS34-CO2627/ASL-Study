@@ -161,6 +161,13 @@ body {
 .fadein{
     animation: fadein 1.5s ease-in-out;
 }
+.footer {
+	background-color: grey;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	max-height: 10%;
+}
 #engside {
     transform: rotateX(180deg);
 }
