@@ -49,6 +49,10 @@
     border-top: 0.4rem solid #636363;
     border-radius: 0 0 1rem 1rem;
 }
+.buttonIcon {
+	height: 100%;
+	width: 100%;
+}
 .bottomDiv {
     display: flex;
     flex-wrap: wrap;
