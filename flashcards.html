@@ -8,15 +8,15 @@
 </head>
 <body>
 
-	<div class ="PerspectiveDiv">
-		<div class="frontOfCardDiv" id = "cardi" onclick="flip(this)">
-			<button class="sideOfCardButton" id="aslside">
+	<div class ="container">
+		<div class="cardi" id = "cardi" onclick="flip(this)">
+			<button class="card" id="aslside">
 				<p id="aslside-number" class="sideNumber"></p>
 
         <p id="aslside-answer">Term</p>
       </button>
 
-      <button class="sideOfCardButton" id="engside">
+      <button class="card" id="engside">
         <p id="engside-number" class="sideNumber"></p>
 
         <p id="engside-answer">Answer</p>
@@ -25,10 +25,10 @@
   </div>
 
 
-  <div class="navigationDiv">
-    <button onclick="nextCard()" class="nextCardButton">Next</button>
+  <div class="nav">
+    <button onclick="nextCard()" class="next">Next</button>
 
-    <button onclick="previousCard()" class="previousCardButton">Previous</button>
+    <button onclick="previousCard()" class="prev">Previous</button>
   </div>
 
 

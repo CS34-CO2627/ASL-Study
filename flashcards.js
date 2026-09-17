@@ -58,18 +58,11 @@ function backflip(){
 			cardit.classList.add("flipped");
 			whichFront.dataset.aslorenglish = "eng";
 			whichFrontImg.src = "media/ENG.svg";
-            const url = new URL(window.location.href);
-            url.searchParams.set("front", "eng");
-            window.history.replaceState(null, "", url.pathname + url.search + url.hash);
     } else {
 			// Start on ASL
 			cardit.classList.remove("flipped");
 			whichFront.dataset.aslorenglish = "asl";
 			whichFrontImg.src = "media/ASL.svg";
-            const url = new URL(window.location.href);
-            url.searchParams.set("front", "asl");
-            window.history.replaceState(null, "", url.pathname + url.search + url.hash);
-
     }
 }
 
@@ -169,7 +162,7 @@ function shuffle(){
 }
 
 // I'm so glad JS uses a mathematically inaccurate modulo %
-// smh (For Kaleb, this is shaking my head)
+// smh
 function trueMod(a,b){
 	return ((a % b) + b) % b;
 }
