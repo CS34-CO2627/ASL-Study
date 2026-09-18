@@ -161,12 +161,9 @@ body {
 .fadein{
     animation: fadein 1.5s ease-in-out;
 }
-.footer {
+footer {
 	text-align: center;
 	background-color: grey;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr;
 	max-height: 10%;
 }
 #engside {
