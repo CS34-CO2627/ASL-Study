@@ -1,4 +1,4 @@
-.titleDiv{
+#titleDiv{
     text-align: center;
     background:grey;
     display: grid;
@@ -17,6 +17,7 @@
     margin: auto;
     margin-bottom: 1em;
 }
+
 .divButtons{
     background:grey;
     display: grid;
@@ -36,23 +37,28 @@
     margin-top: 0;
     top: 0;
 }
+
 .setupButtonDiv1{
     border-bottom: 0.4rem solid #636363;
     margin-bottom: 0;
     border-radius: 1rem 1rem 0 0;
 }
+
 .setupButtonDiv2{
     margin-bottom: 0;
     border-radius: 0;
 }
+
 .setupButtonDiv3{
     border-top: 0.4rem solid #636363;
     border-radius: 0 0 1rem 1rem;
 }
+
 .buttonIcon {
 	height: 100%;
 	width: 100%;
 }
+
 .bottomDiv {
     display: flex;
     flex-wrap: wrap;
@@ -61,6 +67,7 @@
     grid-column: 1 / -1;
     width: 100%;
 }
+
 .buttons{
     background-color: white;
     border-radius: 1em;
@@ -68,19 +75,23 @@
     border-color: black;
     cursor: pointer;
 }
+
 .unitButton{
     width: 5em;
     height: 5em;
 }
+
 .setupButton{
     width: 7em;
     height: 7em;
 }
+
 .unitText{
     font-size: 20px;
     font-weight: 500;
 }
-.container {
+
+#container {
     position: fixed;
     left: 50%;
     top: 50%;
@@ -90,6 +101,7 @@
     border: none;
     perspective: 1000px;
 }
+
 footer {
     height: 50px;
     background: #eee;
@@ -99,16 +111,19 @@ footer {
 	background-color: grey;
 	max-height: 10%;
 }
+
 html, body {
     margin: 0;
     height: 100%;
 }
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-.cardi {
+
+#cardi {
     position: relative;
     width: 100%;
     height: 100%;
@@ -116,12 +131,11 @@ body {
     transition: transform 0s;
     cursor: pointer;
 }
-#cardi {
-    transition: transform 0s;
-}
-.cardi.flipped {
+
+#cardi.flipped {
     transform: rotateX(180deg);
 }
+
 .card {
     position: absolute;
     font-size: 3vw;
@@ -134,19 +148,22 @@ body {
     -webkit-backface-visibility: hidden;
     outline: 2px solid grey;
 }
+
 .sideNumber {
     font-size: 1.5vw;
     left: 4%;
     position: absolute;
     top: 3%;
 }
+
 .card p {
     font-size: 1.5vw;
     right: 4%;
     position: absolute;
     top: 3%;
 }
-.next {
+
+#next {
     font-size: 2vw;
     border-radius: 0.7vw;
     width: 7vw;
@@ -155,7 +172,8 @@ body {
     top: 50%;
     position: fixed;
 }
-.prev {
+
+#prev {
     font-size: 2vw;
     border-radius: 0.7vw;
     width: 9vw;
@@ -164,16 +182,20 @@ body {
     top: 50%;
     position: fixed;
 }
+
 .fadein{
     animation: fadein 1.5s ease-in-out;
 }
+
 #engside {
     transform: rotateX(180deg);
 }
+
 @keyframes fadein{
     from {opacity: 0;}
     to {opacity: 1;}
 }
+
 .optionButtonDiv {
 	position: fixed;
 	bottom: 1rem;

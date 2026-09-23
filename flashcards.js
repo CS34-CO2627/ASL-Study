@@ -71,17 +71,17 @@ function showCard() {
 }
 
 async function nextCard(){
-		// increments and protects against overflow
-		// needs to use special modulo formula because js is wack
-		currentCard = trueMod(currentCard+1, cardList.length);
+    // increments and protects against overflow
+    // needs to use special modulo formula because js is wack
+    currentCard = trueMod(currentCard+1, cardList.length);
 
-		cardit.style.transition = "none";
+    cardit.style.transition = "none";
 
-		if (!backstart){
-			cardit.classList.remove("flipped");
-		} else {
-			cardit.classList.add("flipped");
-		}
+    if (!backstart){
+        cardit.classList.remove("flipped");
+    } else {
+        cardit.classList.add("flipped");
+    }
 
     await new Promise(resolve => setTimeout(resolve, 8));
     cardit.style.transition = "transform 0.8s";
@@ -159,4 +159,5 @@ async function shuffle(){
 function trueMod(a,b){
 	return ((a % b) + b) % b;
 }
+
 fetchCards();
