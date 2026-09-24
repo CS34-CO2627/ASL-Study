@@ -67,9 +67,17 @@ function decideImageOfButton(buttonId){
     }
 }
 
-function openSelected(){
+function openSelectedFlash(){
     if (unitsSelected.length != 0){
-        window.location.href = setUpLink();
+        window.location.href = setUpLink("flash");
+    } else {
+        notEnoughUnitsPopup.showModal();
+    }
+}
+
+function openSelectedList(){
+    if (unitsSelected.length != 0){
+        window.location.href = setUpLink("list");
     } else {
         notEnoughUnitsPopup.showModal();
     }
@@ -86,8 +94,8 @@ function copySelected(){
     copypopup.showModal();
 }
 
-function setUpLink(){
-    let link = "flashcards.html?front=";
+function setUpLink(type = "flash"){
+    let link = type === "flash" ? "flashcards.html?front=" : "list.html?front=";
 		// add if the front is ASL or English to the link
 		link += document.getElementById("whichFront").dataset.aslorenglish;
 		link += "&units=";
