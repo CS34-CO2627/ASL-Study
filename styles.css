@@ -83,12 +83,17 @@
 
 .close-btn {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 2px;
+    right: 2px;
     background: none;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+dialog {
+    border-radius: 1rem;
+    border: 2px solid gray;
 }
 
 dialog::backdrop{
