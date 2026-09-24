@@ -7,46 +7,48 @@
     <link rel="icon" type="image/svg+xml" href="media/ASL.svg">
 </head>
 <body>
-    <div id="titleDiv">
-        <h1>ASL Study - Unit Selection</h1>
-    </div>
+	<main>
+		<div id="titleDiv">
+				<h1>ASL Study - Unit Selection</h1>
+		</div>
 
-    <div id = "upToTen Units" class="divButtons setupButtonDiv1"></div>
-    <div id = "upToTwenty Units" class="divButtons setupButtonDiv2"></div>
-    <div id = "upToThirty Units" class="divButtons setupButtonDiv3"></div>
+		<div id = "upToTen Units" class="divButtons setupButtonDiv1"></div>
+		<div id = "upToTwenty Units" class="divButtons setupButtonDiv2"></div>
+		<div id = "upToThirty Units" class="divButtons setupButtonDiv3"></div>
 
-    <div class="divButtons">
-        <div id="bottomButtons" class="bottomDiv">
-            <button id="clearButton" class="buttons setupButton" onclick="clearUnits()">
-                <!--https://fontawesome.com/icons/classic/regular/trash-can-->
-                <img src="media/CLEAR.svg" class="buttonIcon"/>
-            </button>
+		<div class="divButtons">
+				<div id="bottomButtons" class="bottomDiv">
+						<button id="clearButton" class="buttons setupButton" onclick="clearUnits()">
+								<!--https://fontawesome.com/icons/classic/regular/trash-can-->
+								<img src="media/CLEAR.svg" class="buttonIcon"/>
+						</button>
 
-            <button id="whichFront" data-aslorenglish="asl" class="buttons setupButton" onclick="decideImageOfButton('whichFront')">
-                <img src="media/ASL.svg" class="buttonIcon"/>
-            </button>
+						<button id="whichFront" data-aslorenglish="asl" class="buttons setupButton" onclick="decideImageOfButton('whichFront')">
+								<img src="media/ASL.svg" class="buttonIcon"/>
+						</button>
 
-            <button id="openButton" class="buttons setupButton" onclick="openSelected()">Start</button>
+						<button id="openButton" class="buttons setupButton" onclick="openSelected()">Start</button>
 
-            <button id="copyButton"class="buttons setupButton" onclick="copySelected()">
-                <img src="media/CLIPBOARD.svg" class="buttonIcon"/>
-            </button>
-            <dialog id="copy">
-                <p>Content copied to clipboard!</p>
-                <button class="close-btn" aria-label="close">&times;</button>
-            </dialog>
-            <dialog id="notEnoughUnits">
-                <p>Not enough units selected!</p>
-                <button class="close-btn" aria-label="close">&times;</button>
-            </dialog>
-        </div>
-    </div>
+						<button id="copyButton"class="buttons setupButton" onclick="copySelected()">
+								<img src="media/CLIPBOARD.svg" class="buttonIcon"/>
+						</button>
+						<dialog id="copy">
+								<p>Content copied to clipboard!</p>
+								<button class="close-btn" aria-label="close">&times;</button>
+						</dialog>
+						<dialog id="notEnoughUnits">
+								<p>Not enough units selected!</p>
+								<button class="close-btn" aria-label="close">&times;</button>
+						</dialog>
+				</div>
+		</div>
+	</main>
 
     <script src="index.js"></script>
 
     <footer>
       <p>&copy PHHS Computer Science 3/4 CO '27</p>
-			
+
 
     </footer>
 

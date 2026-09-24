@@ -123,11 +123,11 @@ dialog::backdrop{
 }
 
 footer {
-    height: 50px;
-    background: #eee;
-    bottom: 0px;
-    margin: 0;
-    text-align: center;
+  height: 50px;
+  background: #eee;
+  bottom: 0px;
+  margin: 0;
+  text-align: center;
 	background-color: grey;
 	max-height: 10%;
 }
@@ -141,6 +141,10 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+main {
+	flex: 1;
 }
 
 #cardi {
