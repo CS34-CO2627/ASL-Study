@@ -58,9 +58,17 @@ function decideImageOfButton(buttonId){
     }
 }
 
-function openSelected(){
+function openSelectedFlash(){
     if (unitsSelected.length != 0){
-        window.location.href = setUpLink();
+        window.location.href = setUpLink("flash");
+    } else {
+        alert("Not enough units to open");
+    }
+}
+
+function openSelectedList(){
+    if (unitsSelected.length != 0){
+        window.location.href = setUpLink("list");
     } else {
         alert("Not enough units to open");
     }
@@ -68,15 +76,15 @@ function openSelected(){
 
 function copySelected(){
     if (unitsSelected.length != 0){
-        navigator.clipboard.writeText(setUpLink());
-        alert(`Copied "${setUpLink()}" to your clipboard`);
+        navigator.clipboard.writeText(setUpLink("flash"));
+        alert(`Copied "${setUpLink("flash")}" to your clipboard`);
     } else {
         alert("Not enough units to copy");
     }
 }
 
-function setUpLink(){
-    let link = "flashcards.html?front=";
+function setUpLink(type = "flash"){
+    let link = type === "flash" ? "flashcards.html?front=" : "list.html?front=";
 		// add if the front is ASL or English to the link
 		link += document.getElementById("whichFront").dataset.aslorenglish;
 		link += "&units=";
