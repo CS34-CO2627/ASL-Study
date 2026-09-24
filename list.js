@@ -10,6 +10,11 @@ async function bootCards(){
     side = (new URLSearchParams(window.location.search).get("front") ?? "asl");
 		const listContainer = document.getElementById("listContainer");
 
+		listContainer.style.gridTemplateColumns = "none";
+		listContainer.style.justifyContent = "normal";
+
+		document.getElementById("titleDiv").innerHTML = "<h1>ASL Study - Unit " + units +" Selected</h1>"
+
     for (let i = 1;i <= 30;i++){
         if (units.includes(i)){
 					cardList.push([]);
@@ -17,13 +22,18 @@ async function bootCards(){
         }
     }
 
+		let hr;
+
 		for (let unit of cardList) {
 			for (let card of unit) {
-				console.log(card,card["aslside"]);
 				listContainer.appendChild(document.createElement("div")).textContent = card["aslside"] + " " + card["engside"];
 			}
-			listContainer.appendChild(document.createElement("hr"));//grid-column: 1 / -1;
+			hr = document.createElement("hr");
+			hr.className = "splitter";
+			listContainer.appendChild(hr);
 		}
+
+		listContainer.removeChild(hr);
 }
 
 
