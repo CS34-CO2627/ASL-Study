@@ -1,4 +1,13 @@
 let unitsSelected = [];
+const copypopup = document.getElementById("copy");
+copypopup.querySelector(".close-btn").addEventListener("click", () => {
+    copypopup.close();
+});
+const notEnoughUnitsPopup = document.getElementById("notEnoughUnits");
+notEnoughUnitsPopup.querySelector(".close-btn").addEventListener("click", () => {
+    notEnoughUnitsPopup.close();
+});
+
 
 setUpUnits();
 
@@ -62,17 +71,19 @@ function openSelected(){
     if (unitsSelected.length != 0){
         window.location.href = setUpLink();
     } else {
-        alert("Not enough units to open");
+        notEnoughUnitsPopup.showModal();
     }
 }
 
 function copySelected(){
     if (unitsSelected.length != 0){
+        copypopup.querySelector("p").textContent = `Copied link to your clipboard`;
         navigator.clipboard.writeText(setUpLink());
-        alert(`Copied "${setUpLink()}" to your clipboard`);
-    } else {
-        alert("Not enough units to copy");
     }
+    else {
+        copypopup.querySelector("p").textContent = "Not enough units to copy";
+    }
+    copypopup.showModal();
 }
 
 function setUpLink(){
