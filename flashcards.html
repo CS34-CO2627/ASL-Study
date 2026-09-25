@@ -7,41 +7,37 @@
   <link rel="icon" id="favicon" type="image/svg+xml" href="media/ASL.svg">
 </head>
 <body>
+  <div id = "fullcard">
+    <div id ="container">
+      <button onclick="previousCard()" id="prev">Previous</button>
+      <div id="cardi" onclick="flip(this)">
+        <button class="card" id="aslside">
+          <p id="aslside-number" class="sideNumber"></p>
 
-	<div id ="container">
-		<div id="cardi" onclick="flip(this)">
-			<button class="card" id="aslside">
-				<p id="aslside-number" class="sideNumber"></p>
+          <p id="aslside-answer">Term</p>
+        </button>
 
-        <p id="aslside-answer">Term</p>
-      </button>
+        <button class="card" id="engside">
+          <p id="engside-number" class="sideNumber"></p>
 
-      <button class="card" id="engside">
-        <p id="engside-number" class="sideNumber"></p>
+          <p id="engside-answer">Answer</p>
+        </button>
+      </div>
+      <button onclick="nextCard()" id="next">Next</button>
+    </div>
 
-        <p id="engside-answer">Answer</p>
-      </button>
+    <div class="divButtons extraButtonsDiv optionButtonDiv">
+      <div id="bottomButtons" class="bottomDiv">
+        <button class="buttons setupButton" onclick="shuffle()">Shuffle</button>
+
+        <button id="whichFront" data-aslorenglish="asl" class="buttons setupButton" onclick="backflip()">
+          <img src="media/ASL.svg" class="buttonIcon"/>
+        </button>
+
+        <button class="buttons setupButton" onclick="goBack()"><img src="media/Home.png" class="buttonIcon"/></button>
+      </div>
     </div>
   </div>
-
-
-  <div>
-    <button onclick="nextCard()" id="next">Next</button>
-    <button onclick="previousCard()" id="prev">Previous</button>
-  </div>
-
-
-	<div class="divButtons extraButtonsDiv optionButtonDiv">
-		<div id="bottomButtons" class="bottomDiv">
-			<button class="buttons setupButton" onclick="shuffle()">Shuffle</button>
-
-			<button id="whichFront" data-aslorenglish="asl" class="buttons setupButton" onclick="backflip()">
-				<img src="media/ASL.svg" class="buttonIcon"/>
-			</button>
-
-			<button class="buttons setupButton" onclick="goBack()"><img src="media/Home.png" class="buttonIcon"/></button>
-		</div>
-	</div>
 
   <script src="flashcards.js"></script>
 

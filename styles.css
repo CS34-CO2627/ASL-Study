@@ -111,25 +111,31 @@ dialog::backdrop{
     font-weight: 500;
 }
 
+#fullcard {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
 #container {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 40vw;
-    height: 24vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    width: 70rem;
+    height: 30rem;
     border: none;
     perspective: 1000px;
 }
 
 footer {
-  height: 50px;
-  background: #eee;
-  bottom: 0px;
-  margin: 0;
-  text-align: center;
-	background-color: grey;
-	max-height: 10%;
+    height: 50px;
+    background: #eee;
+    bottom: 0px;
+    margin: 0;
+    text-align: center;
+    background-color: grey;
+    max-height: 10%;
 }
 
 html, body {
@@ -141,6 +147,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 main {
@@ -162,9 +170,9 @@ main {
 
 .card {
     position: absolute;
-    font-size: 3vw;
+    font-size: 4rem;
     width: 100%;
-    border-radius: 4vw;
+    border-radius: 5rem;
     height: 100%;
     border: none;
     background-color: #f0f0f0;
@@ -174,37 +182,31 @@ main {
 }
 
 .sideNumber {
-    font-size: 1.5vw;
+    font-size: 1.5rem;
     left: 4%;
     position: absolute;
     top: 3%;
 }
 
 .card p {
-    font-size: 1.5vw;
+    font-size: 1.5rem;
     right: 4%;
     position: absolute;
     top: 3%;
 }
 
 #next {
-    font-size: 2vw;
-    border-radius: 0.7vw;
-    width: 7vw;
-    height: 4vw;
-    right: 20%;
-    top: 50%;
-    position: fixed;
+    font-size: 2rem;
+    border-radius: 0.7rem;
+    width: 7rem;
+    height: 4rem;
 }
 
 #prev {
-    font-size: 2vw;
-    border-radius: 0.7vw;
-    width: 9vw;
-    height: 4vw;
-    left: 18%;
-    top: 50%;
-    position: fixed;
+    font-size: 2rem;
+    border-radius: 0.7rem;
+    width: 9rem;
+    height: 4rem;
 }
 
 .fadein{
@@ -221,9 +223,5 @@ main {
 }
 
 .optionButtonDiv {
-	position: fixed;
-	bottom: 1rem;
-	left: 50%;
-	transform: translateX(-50%);
-    top: auto;
+    display: flex;
 }
