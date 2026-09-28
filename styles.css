@@ -112,9 +112,10 @@ dialog::backdrop{
 }
 
 #fullcard {
+    margin-top: 8rem;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 6rem;
 }
 
 #container {
