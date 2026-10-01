@@ -20,11 +20,11 @@ function setUpUnits(){
         currentButton.dataset.uniton = "true";
         currentButton.onclick = function() {decideColorOfButton(`unit${i}`);};
         if (i <= 10){
-            document.getElementById("upToTen Units").appendChild(currentButton);
+            document.getElementById("upToTenUnits").appendChild(currentButton);
         } else if (i <= 20){
-            document.getElementById("upToTwenty Units").appendChild(currentButton);
+            document.getElementById("upToTwentyUnits").appendChild(currentButton);
         } else {
-            document.getElementById("upToThirty Units").appendChild(currentButton);
+            document.getElementById("upToThirtyUnits").appendChild(currentButton);
         }
 
         const myInsides = document.createElement("p");

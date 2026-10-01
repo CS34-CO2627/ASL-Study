@@ -1,32 +1,38 @@
-#titleDiv{
+:root {
+    --color-text: black;
+    --color-background1: white;
+    --color-background2: #d4d4d4;
+    --color-background3: grey;
+    --color-background4: rgb(80, 80, 80);
+    --color-outline: #636363
+    
+}
+
+#headerDiv{
     text-align: center;
-    background:grey;
-    display: grid;
     font-size: clamp(0.01rem, 6vw, 1.2rem);
     grid-template-rows: repeat(auto-fit, 5rem);
-    justify-content:center;
     gap: 1px;
     padding-top: 1em;
     padding-bottom: 1em;
-    padding-left: .5rem;
-    padding-right: .5rem;
-    width: 80%;
-    max-width: 480px;
-    place-items: center;
-    border-radius: 1em;
-    margin: auto;
     margin-bottom: 1em;
-		margin-top: 1em;
+    margin-top: 1em;
 }
 
 .divButtons{
-    background:grey;
-    display: grid;
     grid-template-columns: repeat(auto-fit, 5rem);
-    justify-content: center;
     gap: 1rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    top: 0;
+}
+
+.roundedLargeElement{
+    background: var(--color-background3);
+    display: grid;
+    justify-content: center;
     padding-left: .5rem;
     padding-right: .5rem;
     width: 80%;
@@ -34,25 +40,22 @@
     place-items: center;
     border-radius: 1rem;
     margin: auto;
-    margin-bottom: 1rem;
-    margin-top: 0;
-    top: 0;
 }
 
-.setupButtonDiv1{
-    border-bottom: 0.4rem solid #636363;
+#upToTenUnits{
+    border-bottom: 0.4rem solid var(--color-background4);
     margin-bottom: 0;
     border-radius: 1rem 1rem 0 0;
 }
 
-.setupButtonDiv2{
+#upToTwentyUnits{
     margin-bottom: 0;
     border-radius: 0;
 }
 
-.setupButtonDiv3{
-    border-top: 0.4rem solid #636363;
-    border-radius: 0 0 1rem 1rem;
+#upToThirtyUnits{
+    border-top: 0.4rem solid var(--color-background4);
+    border-radius: 0 0 1rem 1rem;    margin-bottom: 0;
 }
 
 .buttonIcon {
@@ -70,10 +73,9 @@
 }
 
 .buttons{
-    background-color: white;
+    background-color: var(--color-background1);
     border-radius: 1em;
     border-width: 2px;
-    border-color: black;
     cursor: pointer;
 }
 
@@ -94,7 +96,7 @@
 
 dialog {
     border-radius: 1rem;
-    border: 2px solid gray;
+    border: 2px solid var(--color-background3);
 }
 
 dialog::backdrop{
@@ -130,11 +132,10 @@ dialog::backdrop{
 
 footer {
     height: 50px;
-    background: #eee;
     bottom: 0px;
     margin: 0;
     text-align: center;
-    background-color: grey;
+    background-color: var(--color-background3);
     max-height: 10%;
 }
 
@@ -179,10 +180,10 @@ main {
     border-radius: 5rem;
     height: 100%;
     border: none;
-    background-color: #f0f0f0;
+    background-color: var(--color-background2);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    outline: 2px solid grey;
+    outline: 2px solid var(--color-background3);
 }
 
 .sideNumber {
@@ -229,3 +230,4 @@ main {
 .optionButtonDiv {
     display: flex;
 }
+
