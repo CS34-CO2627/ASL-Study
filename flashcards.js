@@ -3,10 +3,8 @@ let backstart = false;
 const flipStartTerm = document.getElementById("flipStartTerm");
 let currentCard = 0;
 const cardit = document.getElementById("cardi");
-const aslside = document.getElementById("aslside");
-const engside = document.getElementById("engside");
-const aslside_number = document.getElementById("aslside-number");
-const engside_number = document.getElementById("engside-number");
+const card = document.getElementById("card");
+const number = document.getElementById("number");
 const whichFront = document.getElementById("whichFront");
 const whichFrontImg = whichFront.querySelector("img");
 
@@ -20,12 +18,9 @@ async function fetchCards(){
     const units = (new URLSearchParams(window.location.search).get("units") ?? "100").split(",").map(Number);
     const side = (new URLSearchParams(window.location.search).get("front") ?? "asl");
     if (side === "asl") {
-        cardit.style.transition = "none";
-        cardit.classList.remove("flipped");
-        await new Promise(resolve => setTimeout(resolve, 8));
-        cardit.style.transition = "transform 0.8s";
         backstart = false;
         whichFront.dataset.aslorenglish = "asl";
+
         whichFrontImg.src = "media/ASL.svg";
     } else if (side === "eng"){
         cardit.style.transition = "none";
@@ -64,10 +59,8 @@ function backflip(){
 }
 
 function showCard() {
-    aslside.lastChild.textContent = cardList[currentCard].aslside;
-    engside.lastChild.textContent = cardList[currentCard].engside;
-    aslside_number.textContent = (currentCard + 1) + " / " + cardList.length;
-    engside_number.textContent = (currentCard + 1) + " / " + cardList.length;
+    card.textContent = cardList[currentCard].aslside;
+    number.textContent = (currentCard + 1) + " / " + cardList.length;
 }
 
 async function nextCard(){
@@ -77,15 +70,13 @@ async function nextCard(){
 
     cardit.style.transition = "none";
 
-    if (!backstart){
-        cardit.classList.remove("flipped");
-    } else {
-        cardit.classList.add("flipped");
+    if (backstart){
+        cardit.classList.toggle("flipped");
     }
 
     await new Promise(resolve => setTimeout(resolve, 8));
     cardit.style.transition = "transform 0.8s";
-		showCard();
+    showCard();
 }
 
 async function previousCard(){
@@ -95,11 +86,10 @@ async function previousCard(){
 
     cardit.style.transition = "none";
 
-    if (!backstart){
-        cardit.classList.remove("flipped");
-    } else {
-        cardit.classList.add("flipped");
+    if (backstart){
+        cardit.classList.toggle("flipped");
     }
+
     await new Promise(resolve => setTimeout(resolve, 8));
     cardit.style.transition = "transform 0.8s";
     showCard();
