@@ -1,5 +1,5 @@
 let cardList = [];
-let backstart = false;
+let engstart = false;
 const flipStartTerm = document.getElementById("flipStartTerm");
 let currentCard = 0;
 const cardit = document.getElementById("cardi");
@@ -7,9 +7,23 @@ const card = document.getElementById("card");
 const number = document.getElementById("number");
 const whichFront = document.getElementById("whichFront");
 const whichFrontImg = whichFront.querySelector("img");
+const worder = document.getElementById("worder");
 
 function flip(element){
     element.classList.toggle("flipped");
+    if (engstart) {
+        if (element.classList.contains("flipped")) {
+            showCardASL();
+        } else {
+            showCardENG();
+        }
+    } else {
+        if (element.classList.contains("flipped")) {
+            showCardENG();
+        } else {
+            showCardASL();
+        }
+    }
 }
 
 async function fetchCards(){
@@ -17,19 +31,12 @@ async function fetchCards(){
     const data = await response.json();
     const units = (new URLSearchParams(window.location.search).get("units") ?? "100").split(",").map(Number);
     const side = (new URLSearchParams(window.location.search).get("front") ?? "asl");
-    if (side === "asl") {
-        backstart = false;
-        whichFront.dataset.aslorenglish = "asl";
-
-        whichFrontImg.src = "media/ASL.svg";
-    } else if (side === "eng"){
-        cardit.style.transition = "none";
-        cardit.classList.add("flipped");
-        await new Promise(resolve => setTimeout(resolve, 8));
-        cardit.style.transition = "transform 0.8s";
-        backstart = true;
+    if (side === "eng") {
+        engstart = true;
         whichFront.dataset.aslorenglish = "eng";
         whichFrontImg.src = "media/ENG.svg";
+    } else if (side === "asl") {
+        engstart = false;
     } else {
         console.log("ERROR WITH CARD FETCH")
     }
@@ -40,26 +47,34 @@ async function fetchCards(){
         }
     }
     shuffle();
-    showCard();
+    if (engstart) {
+        showCardENG();
+    } else {
+        showCardASL();
+    }
 }
 
 function backflip(){
-    backstart = !backstart;
-    if (backstart) {
-        // Start on English
-        cardit.classList.add("flipped");
+    engstart = !engstart;
+    if (engstart) {
+        showCardENG();
         whichFront.dataset.aslorenglish = "eng";
         whichFrontImg.src = "media/ENG.svg";
     } else {
         // Start on ASL
-        cardit.classList.remove("flipped");
+        showCardASL();
         whichFront.dataset.aslorenglish = "asl";
         whichFrontImg.src = "media/ASL.svg";
     }
 }
 
-function showCard() {
-    card.textContent = cardList[currentCard].aslside;
+function showCardASL() {
+    worder.textContent = cardList[currentCard].aslside;
+    number.textContent = (currentCard + 1) + " / " + cardList.length;
+}
+
+function showCardENG() {
+    worder.textContent = cardList[currentCard].engside;
     number.textContent = (currentCard + 1) + " / " + cardList.length;
 }
 
@@ -68,15 +83,11 @@ async function nextCard(){
     // needs to use special modulo formula because js is wack
     currentCard = trueMod(currentCard+1, cardList.length);
 
-    cardit.style.transition = "none";
-
-    if (backstart){
-        cardit.classList.toggle("flipped");
+    if (engstart) {
+        showCardENG();
+    } else {
+        showCardASL();
     }
-
-    await new Promise(resolve => setTimeout(resolve, 8));
-    cardit.style.transition = "transform 0.8s";
-    showCard();
 }
 
 async function previousCard(){
@@ -84,15 +95,11 @@ async function previousCard(){
 	// needs to use special modulo formula because js is wack
 	currentCard = trueMod(currentCard-1, cardList.length);
 
-    cardit.style.transition = "none";
-
-    if (backstart){
-        cardit.classList.toggle("flipped");
+    if (engstart) {
+        showCardENG();
+    } else {
+        showCardASL();
     }
-
-    await new Promise(resolve => setTimeout(resolve, 8));
-    cardit.style.transition = "transform 0.8s";
-    showCard();
 }
 
 // key listener for space with some extra kaleb stuff?
@@ -103,25 +110,25 @@ window.addEventListener("keydown", (e) => {
 });
 
 // key listener that deals with up/down for flipping, left/right for traversing cards
-document.addEventListener("keydown", async function(event) {
-    switch (event.key){
-        case " ":
-        case "w":
-        case "s":
-        case "ArrowUp":
-        case "ArrowDown":
-            cardit.classList.toggle("flipped");
-            break;
-        case "ArrowLeft":
-        case "a":
-            await previousCard();
-            break;
-        case "ArrowRight":
-        case "d":
-            await nextCard();
-            break;
-    }
-});
+// document.addEventListener("keydown", async function(event) {
+//     switch (event.key){
+//         case " ":
+//         case "w":
+//         case "s":
+//         case "ArrowUp":
+//         case "ArrowDown":
+//             cardit.classList.toggle("flipped");
+//             break;
+//         case "ArrowLeft":
+//         case "a":
+//             await previousCard();
+//             break;
+//         case "ArrowRight":
+//         case "d":
+//             await nextCard();
+//             break;
+//     }
+// });
 
 function goBack(){
     window.location.href = "index.html";
@@ -133,15 +140,11 @@ async function shuffle(){
         [cardList[i], cardList[j]] = [cardList[j], cardList[i]];
     }
     currentCard = 0;
-    cardit.style.transition = "none";
-    if (backstart){
-        cardit.classList.add("flipped");
+    if (engstart) {
+        showCardENG();
     } else {
-        cardit.classList.remove("flipped");
+        showCardASL();
     }
-    showCard();
-    await new Promise(resolve => setTimeout(resolve, 8));
-    cardit.style.transition = "transform 0.8s";
 }
 
 // I'm so glad JS uses a mathematically inaccurate modulo %

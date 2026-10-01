@@ -167,8 +167,16 @@ main {
     cursor: pointer;
 }
 
-#cardi.flipped {
+/* #cardi.flipped {
     transform: rotateX(180deg);
+} */
+
+#worder {
+    font-size: 4rem;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .card {
