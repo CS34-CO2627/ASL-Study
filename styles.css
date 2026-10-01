@@ -163,13 +163,17 @@ main {
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: transform 0s;
+    transition: transform 0.8s;
     cursor: pointer;
 }
 
-/* #cardi.flipped {
-    transform: rotateX(180deg);
-} */
+#cardi.flipped {
+    transform: rotateY(180deg);
+}
+
+#cardi.flipped #worder {
+    transform: translate(-50%, -50%) rotateY(180deg);
+}
 
 #worder {
     font-size: 4rem;
@@ -187,21 +191,13 @@ main {
     height: 100%;
     border: none;
     background-color: #f0f0f0;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
     outline: 2px solid grey;
-}
-
-.sideNumber {
-    font-size: 1.5rem;
-    left: 4%;
-    position: absolute;
-    top: 3%;
 }
 
 .card p {
     font-size: 1.5rem;
     right: 4%;
+    left: 4%;
     position: absolute;
     top: 3%;
 }
@@ -222,10 +218,6 @@ main {
 
 .fadein{
     animation: fadein 1.5s ease-in-out;
-}
-
-#engside {
-    transform: rotateX(180deg);
 }
 
 @keyframes fadein{

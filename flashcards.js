@@ -9,15 +9,17 @@ const whichFront = document.getElementById("whichFront");
 const whichFrontImg = whichFront.querySelector("img");
 const worder = document.getElementById("worder");
 
-function flip(element){
+async function flip(element){
     element.classList.toggle("flipped");
     if (engstart) {
+        await new Promise(resolve => setTimeout(resolve, 400));
         if (element.classList.contains("flipped")) {
             showCardASL();
         } else {
             showCardENG();
         }
     } else {
+        await new Promise(resolve => setTimeout(resolve, 400));
         if (element.classList.contains("flipped")) {
             showCardENG();
         } else {
