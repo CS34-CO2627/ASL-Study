@@ -39,18 +39,18 @@
     top: 0;
 }
 
-.setupButtonDiv1{
+.unitButtonDiv1{
     border-bottom: 0.4rem solid #636363;
     margin-bottom: 0;
     border-radius: 1rem 1rem 0 0;
 }
 
-.setupButtonDiv2{
+.unitButtonDiv2{
     margin-bottom: 0;
     border-radius: 0;
 }
 
-.setupButtonDiv3{
+.unitButtonDiv3{
     border-top: 0.4rem solid #636363;
     border-radius: 0 0 1rem 1rem;
 }
@@ -117,7 +117,7 @@ dialog::backdrop{
     gap: 3rem;
 }
 
-#container {
+#flashcardsFlexDiv {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -158,7 +158,7 @@ main {
 	flex: 1;
 }
 
-#cardi {
+#perspectiveCardDiv {
     position: relative;
     width: 100%;
     height: 100%;
@@ -167,11 +167,11 @@ main {
     cursor: pointer;
 }
 
-#cardi.flipped {
+#perspectiveCardDiv.flipped {
     transform: rotateX(180deg);
 }
 
-.card {
+#cardInfoButton {
     position: absolute;
     font-size: 4rem;
     width: 100%;
@@ -184,28 +184,22 @@ main {
     outline: 2px solid grey;
 }
 
-.sideNumber {
+#cardInfoButton p {
     font-size: 1.5rem;
+    right: 4%;
     left: 4%;
     position: absolute;
     top: 3%;
 }
 
-.card p {
-    font-size: 1.5rem;
-    right: 4%;
-    position: absolute;
-    top: 3%;
-}
-
-#next {
+#nextCardButton {
     font-size: 2rem;
     border-radius: 0.7rem;
     width: 7rem;
     height: 4rem;
 }
 
-#prev {
+#previousCardButton {
     font-size: 2rem;
     border-radius: 0.7rem;
     width: 9rem;

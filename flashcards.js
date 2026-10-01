@@ -2,9 +2,9 @@ let cardList = [];
 let backstart = false;
 const flipStartTerm = document.getElementById("flipStartTerm");
 let currentCard = 0;
-const cardit = document.getElementById("cardi");
-const card = document.getElementById("card");
-const number = document.getElementById("number");
+const perspectiveCardDiv = document.getElementById("perspectiveCardDiv");
+const cardInfoButton = document.getElementById("cardInfoButton");
+const cardInfoP = document.getElementById("cardInfoP");
 const whichFront = document.getElementById("whichFront");
 const whichFrontImg = whichFront.querySelector("img");
 
@@ -23,10 +23,10 @@ async function fetchCards(){
 
         whichFrontImg.src = "media/ASL.svg";
     } else if (side === "eng"){
-        cardit.style.transition = "none";
-        cardit.classList.add("flipped");
+        cardInfoButtonit.style.transition = "none";
+        cardInfoButtonit.classList.add("flipped");
         await new Promise(resolve => setTimeout(resolve, 8));
-        cardit.style.transition = "transform 0.8s";
+        cardInfoButtonit.style.transition = "transform 0.8s";
         backstart = true;
         whichFront.dataset.aslorenglish = "eng";
         whichFrontImg.src = "media/ENG.svg";
@@ -47,20 +47,20 @@ function backflip(){
     backstart = !backstart;
     if (backstart) {
         // Start on English
-        cardit.classList.add("flipped");
+        perspectiveCardDiv.classList.add("flipped");
         whichFront.dataset.aslorenglish = "eng";
         whichFrontImg.src = "media/ENG.svg";
     } else {
         // Start on ASL
-        cardit.classList.remove("flipped");
+        perspectiveCardDiv.classList.remove("flipped");
         whichFront.dataset.aslorenglish = "asl";
         whichFrontImg.src = "media/ASL.svg";
     }
 }
 
 function showCard() {
-    card.textContent = cardList[currentCard].aslside;
-    number.textContent = (currentCard + 1) + " / " + cardList.length;
+    cardInfoButton.textContent = cardList[currentCard].aslside;
+    cardInfoP.textContent = (currentCard + 1) + " / " + cardList.length;
 }
 
 async function nextCard(){
@@ -68,14 +68,14 @@ async function nextCard(){
     // needs to use special modulo formula because js is wack
     currentCard = trueMod(currentCard+1, cardList.length);
 
-    cardit.style.transition = "none";
+    perspectiveCardDiv.style.transition = "none";
 
     if (backstart){
-        cardit.classList.toggle("flipped");
+        perspectiveCardDiv.classList.toggle("flipped");
     }
 
     await new Promise(resolve => setTimeout(resolve, 8));
-    cardit.style.transition = "transform 0.8s";
+    perspectiveCardDiv.style.transition = "transform 0.8s";
     showCard();
 }
 
@@ -84,14 +84,14 @@ async function previousCard(){
 	// needs to use special modulo formula because js is wack
 	currentCard = trueMod(currentCard-1, cardList.length);
 
-    cardit.style.transition = "none";
+    perspectiveCardDiv.style.transition = "none";
 
     if (backstart){
-        cardit.classList.toggle("flipped");
+        perspectiveCardDiv.classList.toggle("flipped");
     }
 
     await new Promise(resolve => setTimeout(resolve, 8));
-    cardit.style.transition = "transform 0.8s";
+    perspectiveCardDiv.style.transition = "transform 0.8s";
     showCard();
 }
 
@@ -110,7 +110,7 @@ document.addEventListener("keydown", async function(event) {
         case "s":
         case "ArrowUp":
         case "ArrowDown":
-            cardit.classList.toggle("flipped");
+            perspectiveCardDiv.classList.toggle("flipped");
             break;
         case "ArrowLeft":
         case "a":
@@ -133,15 +133,15 @@ async function shuffle(){
         [cardList[i], cardList[j]] = [cardList[j], cardList[i]];
     }
     currentCard = 0;
-    cardit.style.transition = "none";
+    perspectiveCardDiv.style.transition = "none";
     if (backstart){
-        cardit.classList.add("flipped");
+        perspectiveCardDiv.classList.add("flipped");
     } else {
-        cardit.classList.remove("flipped");
+        perspectiveCardDiv.classList.remove("flipped");
     }
     showCard();
     await new Promise(resolve => setTimeout(resolve, 8));
-    cardit.style.transition = "transform 0.8s";
+    perspectiveCardDiv.style.transition = "transform 0.8s";
 }
 
 // I'm so glad JS uses a mathematically inaccurate modulo %

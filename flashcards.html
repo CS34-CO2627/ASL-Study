@@ -8,16 +8,14 @@
 </head>
 <body id = "body">
   <div id = "fullcard">
-    <div id ="container">
-      <button onclick="previousCard()" id="prev">Previous</button>
-      <div id="cardi" onclick="flip(this)">
-        <button class="card" id="card">
-          <p id="number" class="sideNumber"></p>
-
-          <p id="answer">Term</p>
+    <div id ="flashcardsFlexDiv">
+      <button onclick="previousCard()" id="previousCardButton">Previous</button>
+      <div id="perspectiveCardDiv" onclick="flip(this)">
+        <button id="cardInfoButton">
+          <p id="cardInfoP"></p>
         </button>
       </div>
-      <button onclick="nextCard()" id="next">Next</button>
+      <button onclick="nextCard()" id="nextCardButton">Next</button>
     </div>
 
     <div class="divButtons optionButtonDiv">
