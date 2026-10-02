@@ -1,18 +1,75 @@
 :root {
-    --color-text: black;
-    --color-background1: white;
-    --color-background2: #d4d4d4;
-    --color-background3: grey;
-    --color-background4: rgb(80, 80, 80);
-    --color-outline: #636363
-    
+	--color-darkText: #ff0000;
+	--color-lightText: #ee04ff;
+	--color-background1: #ffa600;
+	--color-background2: #6aff00;
+	--color-background3: #002afb;
+	--color-background4: #7d04ff;
+
+	/* Debug coloring */
+	--color-darkText: #ff0000;
+	--color-lightText: #ee04ff;
+	--color-background1: #ffa600;
+	--color-background2: #6aff00;
+	--color-background3: #002afb;
+	--color-background4: #7d04ff;
+}
+
+/* Broad layout stuff */
+
+/* By default, some types of elements dont like to inherit the text color given to them by the body,
+so this selects all types of elements and specifies the text color
+*/
+* {
+	color: var(--color-darkText)
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	font-family: Helvetica, Arial, sans-serif;
+	margin: 0;
+	height: 100%;
+	background-color: var(--color-background1);
+}
+
+#body {
+	justify-content: center;
+	align-items: center;
+}
+
+main {
+	flex: 1;
+}
+
+footer {
+	height: 50px;
+	bottom: 0px;
+	margin: 0;
+	text-align: center;
+	background-color: var(--color-background2);
+	max-height: 10%;
+}
+
+/* Widespread Containers */
+
+.roundedLargeElement{
+	background: var(--color-background2);
+	display: grid;
+	justify-content: center;
+	padding-left: .5rem;
+	padding-right: .5rem;
+	width: 80%;
+	max-width: 480px;
+	place-items: center;
+	border-radius: 1rem;
+	margin: auto;
 }
 
 #headerDiv{
     text-align: center;
     font-size: clamp(0.01rem, 6vw, 1.2rem);
-    grid-template-rows: repeat(auto-fit, 5rem);
-    gap: 1px;
     padding-top: 1em;
     padding-bottom: 1em;
     margin-bottom: 1em;
@@ -29,18 +86,23 @@
     top: 0;
 }
 
-.roundedLargeElement{
-    background: var(--color-background3);
-    display: grid;
-    justify-content: center;
-    padding-left: .5rem;
-    padding-right: .5rem;
-    width: 80%;
-    max-width: 480px;
-    place-items: center;
-    border-radius: 1rem;
-    margin: auto;
+.bottomDiv {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1em;
+	grid-column: 1 / -1;
+	width: 100%;
 }
+
+.optionButtonDiv {
+	display: flex;
+	width: fit-content;
+	padding: 1rem;
+	margin: 0 auto;
+}
+
+/* Unit selection page */
 
 #upToTenUnits{
     border-bottom: 0.4rem solid var(--color-background4);
@@ -58,106 +120,60 @@
     border-radius: 0 0 1rem 1rem;    margin-bottom: 0;
 }
 
-.buttonIcon {
-	height: 100%;
-	width: 100%;
-}
-
-.bottomDiv {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1em;
-    grid-column: 1 / -1;
-    width: 100%;
-}
-
-.buttons{
-    background-color: var(--color-background1);
-    border-radius: 1em;
-    border-width: 2px;
-    cursor: pointer;
+#setupContainer {
+	margin-top: 1rem;
 }
 
 .unitButton{
-    width: 5em;
-    height: 5em;
-}
-
-.close-btn {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-dialog {
-    border-radius: 1rem;
-    border: 2px solid var(--color-background3);
-}
-
-dialog::backdrop{
-    backdrop-filter: blur(3px);
-}
-
-.setupButton{
-    width: 7em;
-    height: 7em;
+	width: 5em;
+	height: 5em;
 }
 
 .unitText{
-    font-size: 20px;
-    font-weight: 500;
+	font-size: 20px;
+	font-weight: 500;
+	color: inherit;
 }
 
+/* Dialog */
+
+dialog {
+	border-radius: 1rem;
+	border: 2px solid var(--color-background3);
+	background-color: var(--color-background1);
+}
+
+dialog::backdrop{
+	backdrop-filter: blur(3px);
+}
+
+.close-btn {
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	background: none;
+	border: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+/* Flashcards */
+
 #fullcard {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
 }
 
 #container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    width: 70rem;
-    height: 30rem;
-    border: none;
-    perspective: 1000px;
-}
-
-footer {
-    height: 50px;
-    bottom: 0px;
-    margin: 0;
-    text-align: center;
-    background-color: var(--color-background3);
-    max-height: 10%;
-}
-
-html, body {
-    margin: 0;
-    height: 100%;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: Helvetica, Arial, sans-serif;
-}
-
-#body {
+	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-main {
-	flex: 1;
+	gap: 3rem;
+	width: 70rem;
+	height: 30rem;
+	border: none;
+	perspective: 1000px;
 }
 
 #cardi {
@@ -200,18 +216,15 @@ main {
     top: 3%;
 }
 
-#next {
-    font-size: 2rem;
-    border-radius: 0.7rem;
-    width: 7rem;
-    height: 4rem;
-}
-
-#prev {
-    font-size: 2rem;
-    border-radius: 0.7rem;
-    width: 9rem;
-    height: 4rem;
+#prev, #next {
+	font-size: 2rem;
+	width: 10rem;
+	height: 5rem;
+	background-color: var(--color-background3);
+	border-radius: 1em;
+	border-width: 2px;
+	cursor: pointer;
+	color: inherit;
 }
 
 .fadein{
@@ -227,7 +240,22 @@ main {
     to {opacity: 1;}
 }
 
-.optionButtonDiv {
-    display: flex;
+/* Setup buttons (on both pages)*/
+
+.buttonIcon {
+	height: 100%;
+	width: 100%;
 }
 
+.buttons{
+	background-color: var(--color-background3);
+	border-radius: 1em;
+	border-width: 2px;
+	cursor: pointer;
+	color: inherit;
+}
+
+.setupButton{
+	width: 7em;
+	height: 7em;
+}

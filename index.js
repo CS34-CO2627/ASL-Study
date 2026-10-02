@@ -37,16 +37,16 @@ function setUpUnits(){
 function decideColorOfButton(buttonId){
     const myButt = document.getElementById(buttonId);
     if (myButt.dataset.uniton === "true"){
-        myButt.style.backgroundColor = "gray";
-        myButt.style.color = "white";
+        myButt.style.backgroundColor = "var(--color-background4)";
+        myButt.style.color = "var(--color-lightText)";
         myButt.dataset.uniton = "false";
         if (buttonId != "aslorenglish"){
             unitsSelected.push(myButt);
         }
     }
     else {
-        myButt.style.backgroundColor = "white";
-        myButt.style.color = "black";
+        myButt.style.backgroundColor = "var(--color-background3)";
+        myButt.style.color = "var(--color-darkText)";
         myButt.dataset.uniton = "true";
         if (buttonId != "aslorenglish"){
             unitsSelected.splice(unitsSelected.indexOf(myButt),1);
