@@ -1,18 +1,20 @@
 :root {
-	--color-darkText: #ff0000;
-	--color-lightText: #ee04ff;
-	--color-background1: #ffa600;
-	--color-background2: #6aff00;
-	--color-background3: #002afb;
-	--color-background4: #7d04ff;
+	/* PHHS Theme */
+	--color-darkText: #000000;
+	--color-lightText: #ffe57b;
+	--color-background1: #7dbd77;
+	--color-background2: #44953c;
+	--color-background3: #fbd100;
+	--color-background4: #124500;
 
 	/* Debug coloring */
-	--color-darkText: #ff0000;
-	--color-lightText: #ee04ff;
-	--color-background1: #ffa600;
-	--color-background2: #6aff00;
-	--color-background3: #002afb;
-	--color-background4: #7d04ff;
+	/* To apply, uncomment this section*/
+	/*--color-darkText: #ff0000;*/
+	/*--color-lightText: #ee04ff;*/
+	/*--color-background1: #ffa600;*/
+	/*--color-background2: #6aff00;*/
+	/*--color-background3: #002afb;*/
+	/*--color-background4: #7d04ff;*/
 }
 
 /* Broad layout stuff */
@@ -64,6 +66,7 @@ footer {
 	max-width: 480px;
 	place-items: center;
 	border-radius: 1rem;
+	border: 3px solid var(--color-background4);
 	margin: auto;
 }
 
@@ -106,18 +109,21 @@ footer {
 
 #upToTenUnits{
     border-bottom: 0.4rem solid var(--color-background4);
+	border-radius: 1rem 1rem 0 0;
     margin-bottom: 0;
-    border-radius: 1rem 1rem 0 0;
 }
 
 #upToTwentyUnits{
+	border-top: none;
+	border-bottom: none;
     margin-bottom: 0;
     border-radius: 0;
 }
 
 #upToThirtyUnits{
     border-top: 0.4rem solid var(--color-background4);
-    border-radius: 0 0 1rem 1rem;    margin-bottom: 0;
+    border-radius: 0 0 1rem 1rem;
+	margin-bottom: 0;
 }
 
 #setupContainer {
@@ -199,7 +205,7 @@ dialog::backdrop{
     background-color: var(--color-background2);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    outline: 2px solid var(--color-background3);
+	border: 3px solid var(--color-background4);
 }
 
 .sideNumber {
