@@ -9,23 +9,29 @@ const whichFront = document.getElementById("whichFront");
 const whichFrontImg = whichFront.querySelector("img");
 const worder = document.getElementById("worder");
 
-async function flip(element){
+function flip(element){ 
     element.classList.toggle("flipped");
-    if (engstart) {
-        await new Promise(resolve => setTimeout(resolve, 400));
-        if (element.classList.contains("flipped")) {
-            showCardASL();
+    setTimeout(() => {
+        worder.classList.add("swap-hidden");
+        number.classList.add("swap-hidden");
+    }, 350);
+    setTimeout(() => {
+        if (engstart) {
+            if (element.classList.contains("flipped")) {
+                showCardASL();
+            } else {
+                showCardENG();
+            }
         } else {
-            showCardENG();
+            if (element.classList.contains("flipped")) {
+                showCardENG();
+            } else {
+                showCardASL();
+            }
         }
-    } else {
-        await new Promise(resolve => setTimeout(resolve, 400));
-        if (element.classList.contains("flipped")) {
-            showCardENG();
-        } else {
-            showCardASL();
-        }
-    }
+        worder.classList.remove("swap-hidden");
+        number.classList.remove("swap-hidden");
+    }, 450);
 }
 
 async function fetchCards(){

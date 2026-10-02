@@ -167,12 +167,16 @@ main {
     cursor: pointer;
 }
 
-#cardi.flipped {
-    transform: rotateY(180deg);
+#worder.swap-hidden {
+    backface-visibility: hidden;
 }
 
-#cardi.flipped #worder {
-    transform: translate(-50%, -50%) rotateY(180deg);
+#number.swap-hidden {
+    backface-visibility: hidden;
+}
+
+#cardi.flipped {
+    transform: rotateY(180deg);
 }
 
 #worder {
