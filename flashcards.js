@@ -1,37 +1,17 @@
 let cardList = [];
-let engstart = false;
+let backstart = false;
 const flipStartTerm = document.getElementById("flipStartTerm");
 let currentCard = 0;
 const cardit = document.getElementById("cardi");
-const card = document.getElementById("card");
-const number = document.getElementById("number");
+const front = document.getElementById("front");
+const back = document.getElementById("back");
+const frontside_number = document.getElementById("frontside-number");
+const backside_number = document.getElementById("backside-number");
 const whichFront = document.getElementById("whichFront");
 const whichFrontImg = whichFront.querySelector("img");
-const worder = document.getElementById("worder");
 
-function flip(element){ 
+function flip(element){
     element.classList.toggle("flipped");
-    setTimeout(() => {
-        worder.classList.add("swap-hidden");
-        number.classList.add("swap-hidden");
-    }, 350);
-    setTimeout(() => {
-        if (engstart) {
-            if (element.classList.contains("flipped")) {
-                showCardASL();
-            } else {
-                showCardENG();
-            }
-        } else {
-            if (element.classList.contains("flipped")) {
-                showCardENG();
-            } else {
-                showCardASL();
-            }
-        }
-        worder.classList.remove("swap-hidden");
-        number.classList.remove("swap-hidden");
-    }, 450);
 }
 
 async function fetchCards(){
@@ -39,12 +19,14 @@ async function fetchCards(){
     const data = await response.json();
     const units = (new URLSearchParams(window.location.search).get("units") ?? "100").split(",").map(Number);
     const side = (new URLSearchParams(window.location.search).get("front") ?? "asl");
-    if (side === "eng") {
-        engstart = true;
+    if (side === "asl") {
+        backstart = false;
+        whichFront.dataset.aslorenglish = "asl";
+        whichFrontImg.src = "media/ASL.svg";
+    } else if (side === "eng"){
+        backstart = true;
         whichFront.dataset.aslorenglish = "eng";
         whichFrontImg.src = "media/ENG.svg";
-    } else if (side === "asl") {
-        engstart = false;
     } else {
         console.log("ERROR WITH CARD FETCH")
     }
@@ -55,35 +37,40 @@ async function fetchCards(){
         }
     }
     shuffle();
-    if (engstart) {
-        showCardENG();
+    if (backstart) {
+        showENGCard();
     } else {
-        showCardASL();
+        showASLCard();
     }
 }
 
 function backflip(){
-    engstart = !engstart;
-    if (engstart) {
-        showCardENG();
+    backstart = !backstart;
+    if (backstart) {
+        // Start on English
+        cardit.classList.add("flipped");
         whichFront.dataset.aslorenglish = "eng";
         whichFrontImg.src = "media/ENG.svg";
     } else {
         // Start on ASL
-        showCardASL();
+        cardit.classList.remove("flipped");
         whichFront.dataset.aslorenglish = "asl";
         whichFrontImg.src = "media/ASL.svg";
     }
 }
 
-function showCardASL() {
-    worder.textContent = cardList[currentCard].aslside;
-    number.textContent = (currentCard + 1) + " / " + cardList.length;
+function showASLCard() {
+    front.lastChild.textContent = cardList[currentCard].aslside;
+    back.lastChild.textContent = cardList[currentCard].engside;
+    frontside_number.textContent = (currentCard + 1) + " / " + cardList.length;
+    backside_number.textContent = (currentCard + 1) + " / " + cardList.length;
 }
 
-function showCardENG() {
-    worder.textContent = cardList[currentCard].engside;
-    number.textContent = (currentCard + 1) + " / " + cardList.length;
+function showENGCard() {
+    front.lastChild.textContent = cardList[currentCard].engside;
+    back.lastChild.textContent = cardList[currentCard].aslside;
+    frontside_number.textContent = (currentCard + 1) + " / " + cardList.length;
+    backside_number.textContent = (currentCard + 1) + " / " + cardList.length;
 }
 
 async function nextCard(){
@@ -91,10 +78,10 @@ async function nextCard(){
     // needs to use special modulo formula because js is wack
     currentCard = trueMod(currentCard+1, cardList.length);
 
-    if (engstart) {
-        showCardENG();
+    if (backstart) {
+        showENGCard();
     } else {
-        showCardASL();
+        showASLCard();
     }
 }
 
@@ -103,10 +90,10 @@ async function previousCard(){
 	// needs to use special modulo formula because js is wack
 	currentCard = trueMod(currentCard-1, cardList.length);
 
-    if (engstart) {
-        showCardENG();
+    if (backstart) {
+        showENGCard();
     } else {
-        showCardASL();
+        showASLCard();
     }
 }
 
@@ -118,25 +105,25 @@ window.addEventListener("keydown", (e) => {
 });
 
 // key listener that deals with up/down for flipping, left/right for traversing cards
-// document.addEventListener("keydown", async function(event) {
-//     switch (event.key){
-//         case " ":
-//         case "w":
-//         case "s":
-//         case "ArrowUp":
-//         case "ArrowDown":
-//             cardit.classList.toggle("flipped");
-//             break;
-//         case "ArrowLeft":
-//         case "a":
-//             await previousCard();
-//             break;
-//         case "ArrowRight":
-//         case "d":
-//             await nextCard();
-//             break;
-//     }
-// });
+document.addEventListener("keydown", async function(event) {
+    switch (event.key){
+        case " ":
+        case "w":
+        case "s":
+        case "ArrowUp":
+        case "ArrowDown":
+            cardit.classList.toggle("flipped");
+            break;
+        case "ArrowLeft":
+        case "a":
+            await previousCard();
+            break;
+        case "ArrowRight":
+        case "d":
+            await nextCard();
+            break;
+    }
+});
 
 function goBack(){
     window.location.href = "index.html";
@@ -148,10 +135,10 @@ async function shuffle(){
         [cardList[i], cardList[j]] = [cardList[j], cardList[i]];
     }
     currentCard = 0;
-    if (engstart) {
-        showCardENG();
+    if (backstart) {
+        showENGCard();
     } else {
-        showCardASL();
+        showASLCard();
     }
 }
 

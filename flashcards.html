@@ -11,9 +11,12 @@
     <div id ="container">
       <button onclick="previousCard()" id="prev">Previous</button>
       <div id="cardi" onclick="flip(this)">
-        <button class="card" id="card">
-          <p id="number" class="sideNumber"></p>
-          <p id="worder"></p>
+        <button class="card" id="front">
+          <p id="frontside-number" class="sideNumber"></p>
+        </button>
+
+        <button class="card" id="back">
+          <p id="backside-number" class="sideNumber"></p>
         </button>
       </div>
       <button onclick="nextCard()" id="next">Next</button>

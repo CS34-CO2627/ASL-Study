@@ -167,24 +167,8 @@ main {
     cursor: pointer;
 }
 
-#worder.swap-hidden {
-    backface-visibility: hidden;
-}
-
-#number.swap-hidden {
-    backface-visibility: hidden;
-}
-
 #cardi.flipped {
-    transform: rotateY(180deg);
-}
-
-#worder {
-    font-size: 4rem;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: rotateX(180deg);
 }
 
 .card {
@@ -195,13 +179,21 @@ main {
     height: 100%;
     border: none;
     background-color: #f0f0f0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     outline: 2px solid grey;
+}
+
+.sideNumber {
+    font-size: 1.5rem;
+    left: 4%;
+    position: absolute;
+    top: 3%;
 }
 
 .card p {
     font-size: 1.5rem;
     right: 4%;
-    left: 4%;
     position: absolute;
     top: 3%;
 }
@@ -222,6 +214,10 @@ main {
 
 .fadein{
     animation: fadein 1.5s ease-in-out;
+}
+
+#back {
+    transform: rotateX(180deg);
 }
 
 @keyframes fadein{
