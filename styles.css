@@ -1,5 +1,6 @@
 :root {
 	/* PHHS Theme */
+	/* Teal Green #006D5B */
 	--color-darkText: #000000;
 	--color-lightText: #ffe57b;
 	--color-background1: #7dbd77;
@@ -7,14 +8,14 @@
 	--color-background3: #fbd100;
 	--color-background4: #124500;
 
-	/* Debug coloring */
-	/* To apply, uncomment this section*/
-	/*--color-darkText: #ff0000;*/
-	/*--color-lightText: #ee04ff;*/
-	/*--color-background1: #ffa600;*/
-	/*--color-background2: #6aff00;*/
-	/*--color-background3: #002afb;*/
-	/*--color-background4: #7d04ff;*/
+	/* Debug coloring
+	To apply, uncomment this section
+	--color-darkText: #ff0000;
+	--color-lightText: #ee04ff;
+	--color-background1: #ffa600;
+	--color-background2: #6aff00;
+	--color-background3: #002afb;
+	--color-background4: #7d04ff; */
 }
 
 /* Broad layout stuff */
@@ -256,9 +257,12 @@ dialog::backdrop{
 .buttons{
 	background-color: var(--color-background3);
 	border-radius: 1em;
-	border-width: 2px;
+	border-width: 0px;
+	outline: 3px solid currentColor;
+	outline-offset: 0;
 	cursor: pointer;
 	color: inherit;
+	box-shadow: none;
 }
 
 .setupButton{
