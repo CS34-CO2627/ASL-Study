@@ -40,5 +40,11 @@ Tina Hague
 
 ---
 
-#### See our [AI Policy](<>)
+#### Our AI Policy
+- LLMs cannot be given access to anyone's personal information.
+	- Hide personal information and API Keys.
+- No code generation, but debugging and documentation are allowed.
+	- Writing comments/documentation with AI is allowed.
+	- Preferred prompts include “Lead me to the solution but limit generated code”
+
 
