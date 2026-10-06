@@ -1,152 +1,40 @@
-#titleDiv{
-    text-align: center;
-    background:grey;
-    display: grid;
-    font-size: clamp(0.01rem, 6vw, 1.2rem);
-    grid-template-rows: repeat(auto-fit, 5rem);
-    justify-content:center;
-    gap: 1px;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    padding-left: .5rem;
-    padding-right: .5rem;
-    width: 80%;
-    max-width: 480px;
-    place-items: center;
-    border-radius: 1em;
-    margin: auto;
-    margin-bottom: 1em;
-		margin-top: 1em;
+:root {
+	/* PHHS Theme */
+	/* Teal Green #006D5B */
+	--color-darkText: #000000;
+	--color-lightText: #ffe57b;
+	--color-background1: #7dbd77;
+	--color-background2: #44953c;
+	--color-background3: #ffe57b;
+	--color-background4: #124500;
+
+	/* Debug coloring
+	To apply, uncomment this section
+	--color-darkText: #ff0000;
+	--color-lightText: #ee04ff;
+	--color-background1: #ffa600;
+	--color-background2: #6aff00;
+	--color-background3: #002afb;
+	--color-background4: #7d04ff; */
 }
 
-.divButtons{
-    background:grey;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 5rem);
-    justify-content: center;
-    gap: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: .5rem;
-    padding-right: .5rem;
-    width: 80%;
-    max-width: 480px;
-    place-items: center;
-    border-radius: 1rem;
-    margin: auto;
-    margin-bottom: 1rem;
-    margin-top: 0;
-    top: 0;
-}
+/* Broad layout stuff */
 
-.setupButtonDiv1{
-    border-bottom: 0.4rem solid #636363;
-    margin-bottom: 0;
-    border-radius: 1rem 1rem 0 0;
-}
-
-.setupButtonDiv2{
-    margin-bottom: 0;
-    border-radius: 0;
-}
-
-.setupButtonDiv3{
-    border-top: 0.4rem solid #636363;
-    border-radius: 0 0 1rem 1rem;
-}
-
-.buttonIcon {
-	height: 100%;
-	width: 100%;
-}
-
-.bottomDiv {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1em;
-    grid-column: 1 / -1;
-    width: 100%;
-}
-
-.buttons{
-    background-color: white;
-    border-radius: 1em;
-    border-width: 2px;
-    border-color: black;
-    cursor: pointer;
-}
-
-.unitButton{
-    width: 5em;
-    height: 5em;
-}
-
-.close-btn {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-dialog {
-    border-radius: 1rem;
-    border: 2px solid gray;
-}
-
-dialog::backdrop{
-    backdrop-filter: blur(3px);
-}
-
-.setupButton{
-    width: 7em;
-    height: 7em;
-}
-
-.unitText{
-    font-size: 20px;
-    font-weight: 500;
-}
-
-#fullcard {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
-
-#container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    width: 70rem;
-    height: 30rem;
-    border: none;
-    perspective: 1500px;
-}
-
-footer {
-    height: 50px;
-    background: #eee;
-    bottom: 0px;
-    margin: 0;
-    text-align: center;
-    background-color: grey;
-    max-height: 10%;
-}
-
-html, body {
-    margin: 0;
-    height: 100%;
+/* By default, some types of elements dont like to inherit the text color given to them by the body,
+so this selects all types of elements and specifies the text color
+*/
+* {
+	color: var(--color-darkText)
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	font-family: Helvetica, Arial, sans-serif;
+	margin: 0;
+	height: 100%;
+	background-color: var(--color-background1);
 }
 
 #body {
@@ -156,6 +44,144 @@ body {
 
 main {
 	flex: 1;
+}
+
+footer {
+	font-weight:600;
+	height: 50px;
+	bottom: 0px;
+	margin: 0;
+	text-align: center;
+	background-color: var(--color-background2);
+	max-height: 10%;
+}
+
+/* Widespread Containers */
+
+.roundedLargeElement{
+	background: var(--color-background2);
+	display: grid;
+	justify-content: center;
+	padding-left: .5rem;
+	padding-right: .5rem;
+	width: 80%;
+	max-width: 480px;
+	place-items: center;
+	border-radius: 1rem;
+	border: 3px solid var(--color-background4);
+	margin: auto;
+}
+
+#headerDiv{
+    text-align: center;
+    font-size: clamp(0.01rem, 6vw, 1.2rem);
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.divButtons{
+    grid-template-columns: repeat(auto-fit, 5rem);
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    top: 0;
+}
+
+.bottomDiv {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1em;
+	grid-column: 1 / -1;
+	width: 100%;
+}
+
+.optionButtonDiv {
+	display: flex;
+	width: fit-content;
+	padding: 1rem;
+	margin: 0 auto;
+}
+
+/* Unit selection page */
+
+#upToTenUnits{
+    border-bottom: 0.4rem solid var(--color-background4);
+	border-radius: 1rem 1rem 0 0;
+    margin-bottom: 0;
+}
+
+#upToTwentyUnits{
+	border-top: none;
+	border-bottom: none;
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+#upToThirtyUnits{
+    border-top: 0.4rem solid var(--color-background4);
+    border-radius: 0 0 1rem 1rem;
+	margin-bottom: 0;
+}
+
+#setupContainer {
+	margin-top: 1rem;
+}
+
+.unitButton{
+	width: 5em;
+	height: 5em;
+}
+
+.unitText{
+	font-size: 20px;
+	font-weight: 500;
+	color: inherit;
+}
+
+/* Dialog */
+
+dialog {
+	border-radius: 1rem;
+	border: 3px solid var(--color-darkText);
+	background-color: var(--color-background1);
+}
+
+dialog::backdrop{
+	backdrop-filter: blur(3px);
+}
+
+.close-btn {
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	background: none;
+	border: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+/* Flashcards */
+
+#fullcard {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+}
+
+#container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 3rem;
+	width: 70rem;
+	height: 30rem;
+	border: none;
+	perspective: 1000px;
 }
 
 #cardi {
@@ -178,10 +204,10 @@ main {
     border-radius: 5rem;
     height: 100%;
     border: none;
-    background-color: #f0f0f0;
+    background-color: var(--color-background2);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    outline: 2px solid grey;
+	border: 3px solid var(--color-background4);
 }
 
 .sideNumber {
@@ -198,22 +224,17 @@ main {
     top: 3%;
 }
 
-.no-transition {
-  transition: none !important;
-}
-
-#next {
-    font-size: 2rem;
-    border-radius: 0.7rem;
-    width: 7rem;
-    height: 4rem;
-}
-
-#prev {
-    font-size: 2rem;
-    border-radius: 0.7rem;
-    width: 9rem;
-    height: 4rem;
+#prev, #next {
+	font-size: 2rem;
+	width: 10rem;
+	height: 5rem;
+	background-color: var(--color-background3);
+	border-radius: 1em;
+	border-width: 0px;
+	outline: 3px solid currentColor;
+	outline-offset: 0;
+	cursor: pointer;
+	color: inherit;
 }
 
 .fadein{
@@ -229,6 +250,25 @@ main {
     to {opacity: 1;}
 }
 
-.optionButtonDiv {
-    display: flex;
+/* Setup buttons (on both pages)*/
+
+.buttonIcon {
+	height: 100%;
+	width: 100%;
+}
+
+.buttons{
+	background-color: var(--color-background3);
+	border-radius: 1em;
+	border-width: 0px;
+	outline: 3px solid currentColor;
+	outline-offset: 0;
+	cursor: pointer;
+	color: inherit;
+	box-shadow: none;
+}
+
+.setupButton{
+	width: 7em;
+	height: 7em;
 }

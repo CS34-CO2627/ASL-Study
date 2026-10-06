@@ -20,11 +20,11 @@ function setUpUnits(){
         currentButton.dataset.uniton = "true";
         currentButton.onclick = function() {decideColorOfButton(`unit${i}`);};
         if (i <= 10){
-            document.getElementById("upToTen Units").appendChild(currentButton);
+            document.getElementById("upToTenUnits").appendChild(currentButton);
         } else if (i <= 20){
-            document.getElementById("upToTwenty Units").appendChild(currentButton);
+            document.getElementById("upToTwentyUnits").appendChild(currentButton);
         } else {
-            document.getElementById("upToThirty Units").appendChild(currentButton);
+            document.getElementById("upToThirtyUnits").appendChild(currentButton);
         }
 
         const myInsides = document.createElement("p");
@@ -37,16 +37,16 @@ function setUpUnits(){
 function decideColorOfButton(buttonId){
     const myButt = document.getElementById(buttonId);
     if (myButt.dataset.uniton === "true"){
-        myButt.style.backgroundColor = "gray";
-        myButt.style.color = "white";
+        myButt.style.backgroundColor = "var(--color-background4)";
+        myButt.style.color = "var(--color-lightText)";
         myButt.dataset.uniton = "false";
         if (buttonId != "aslorenglish"){
             unitsSelected.push(myButt);
         }
     }
     else {
-        myButt.style.backgroundColor = "white";
-        myButt.style.color = "black";
+        myButt.style.backgroundColor = "var(--color-background3)";
+        myButt.style.color = "var(--color-darkText)";
         myButt.dataset.uniton = "true";
         if (buttonId != "aslorenglish"){
             unitsSelected.splice(unitsSelected.indexOf(myButt),1);
