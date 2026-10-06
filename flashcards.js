@@ -3,8 +3,10 @@ let backstart = false;
 const flipStartTerm = document.getElementById("flipStartTerm");
 let currentCard = 0;
 const cardit = document.getElementById("cardi");
-const card = document.getElementById("card");
-const number = document.getElementById("number");
+const front = document.getElementById("front");
+const back = document.getElementById("back");
+const frontside_number = document.getElementById("frontside-number");
+const backside_number = document.getElementById("backside-number");
 const whichFront = document.getElementById("whichFront");
 const whichFrontImg = whichFront.querySelector("img");
 
@@ -20,13 +22,8 @@ async function fetchCards(){
     if (side === "asl") {
         backstart = false;
         whichFront.dataset.aslorenglish = "asl";
-
         whichFrontImg.src = "media/ASL.svg";
     } else if (side === "eng"){
-        cardit.style.transition = "none";
-        cardit.classList.add("flipped");
-        await new Promise(resolve => setTimeout(resolve, 8));
-        cardit.style.transition = "transform 0.8s";
         backstart = true;
         whichFront.dataset.aslorenglish = "eng";
         whichFrontImg.src = "media/ENG.svg";
@@ -40,59 +37,70 @@ async function fetchCards(){
         }
     }
     shuffle();
-    showCard();
+    if (backstart) {
+        showENGCard();
+    } else {
+        showASLCard();
+    }
 }
 
 function backflip(){
     backstart = !backstart;
     if (backstart) {
         // Start on English
-        cardit.classList.add("flipped");
         whichFront.dataset.aslorenglish = "eng";
         whichFrontImg.src = "media/ENG.svg";
     } else {
         // Start on ASL
-        cardit.classList.remove("flipped");
         whichFront.dataset.aslorenglish = "asl";
         whichFrontImg.src = "media/ASL.svg";
     }
 }
 
-function showCard() {
-    card.textContent = cardList[currentCard].aslside;
-    number.textContent = (currentCard + 1) + " / " + cardList.length;
+function showASLCard() {
+    front.lastChild.textContent = cardList[currentCard].aslside;
+    back.lastChild.textContent = cardList[currentCard].engside;
+    frontside_number.textContent = (currentCard + 1) + " / " + cardList.length;
+    backside_number.textContent = (currentCard + 1) + " / " + cardList.length;
+}
+
+function showENGCard() {
+    front.lastChild.textContent = cardList[currentCard].engside;
+    back.lastChild.textContent = cardList[currentCard].aslside;
+    frontside_number.textContent = (currentCard + 1) + " / " + cardList.length;
+    backside_number.textContent = (currentCard + 1) + " / " + cardList.length;
 }
 
 async function nextCard(){
     // increments and protects against overflow
     // needs to use special modulo formula because js is wack
     currentCard = trueMod(currentCard+1, cardList.length);
-
-    cardit.style.transition = "none";
-
-    if (backstart){
-        cardit.classList.toggle("flipped");
+    cardit.classList.add("no-transition");
+    cardit.classList.remove("flipped");
+    requestAnimationFrame(() => {
+        cardit.classList.remove("no-transition");
+    });
+    if (backstart) {
+        showENGCard();
+    } else {
+        showASLCard();
     }
-
-    await new Promise(resolve => setTimeout(resolve, 8));
-    cardit.style.transition = "transform 0.8s";
-    showCard();
 }
 
 async function previousCard(){
 	// decrements and protects against overflow
 	// needs to use special modulo formula because js is wack
 	currentCard = trueMod(currentCard-1, cardList.length);
-
-    cardit.style.transition = "none";
-
-    if (backstart){
-        cardit.classList.toggle("flipped");
+    cardit.classList.add("no-transition");
+    cardit.classList.remove("flipped");
+    requestAnimationFrame(() => {
+        cardit.classList.remove("no-transition");
+    });
+    if (backstart) {
+        showENGCard();
+    } else {
+        showASLCard();
     }
-
-    await new Promise(resolve => setTimeout(resolve, 8));
-    cardit.style.transition = "transform 0.8s";
-    showCard();
 }
 
 // key listener for space with some extra kaleb stuff?
@@ -127,21 +135,17 @@ function goBack(){
     window.location.href = "index.html";
 }
 
-async function shuffle(){
+function shuffle(){
     for (let i = cardList.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [cardList[i], cardList[j]] = [cardList[j], cardList[i]];
     }
     currentCard = 0;
-    cardit.style.transition = "none";
-    if (backstart){
-        cardit.classList.add("flipped");
+    if (backstart) {
+        showENGCard();
     } else {
-        cardit.classList.remove("flipped");
+        showASLCard();
     }
-    showCard();
-    await new Promise(resolve => setTimeout(resolve, 8));
-    cardit.style.transition = "transform 0.8s";
 }
 
 // I'm so glad JS uses a mathematically inaccurate modulo %
