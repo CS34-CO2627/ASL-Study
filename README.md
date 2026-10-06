@@ -25,7 +25,7 @@ The **Flashcard** webpage will have shuffled flashcards that belong to all of th
 | Previous Card | Next Card | Shuffle | Flip Side | Home |
 | :-----------: | :-------: | :------:| :-------: | :--: |
 | <img src="media/" style="width: 10%" alt="previousImg"> | <img src="media/" style="width: 10%" alt="nextImg"> | <img src="media/" style="width: 10%" alt="shuffleImg"> | <img src="media/" style="width: 10%" alt="flipImg"> | <img src="media/" style="width: 10%" alt="homeImg"> |
-| Clears the selected units. | Flips which language the flashcard starts on. | Loads the flashcards to begin studying. | Copies the webpage link with the selected units to share. |  |
+| Clears the selected units. | Flips which language the flashcard starts on. | Loads the flashcards to begin studying. | Copies the webpage link with the selected units to share. | Navigates back to the **Unit Selection** page |
 
 ---
 
