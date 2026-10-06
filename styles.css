@@ -125,7 +125,7 @@ dialog::backdrop{
     width: 70rem;
     height: 30rem;
     border: none;
-    perspective: 1000px;
+    perspective: 1500px;
 }
 
 footer {
@@ -196,6 +196,10 @@ main {
     right: 4%;
     position: absolute;
     top: 3%;
+}
+
+.no-transition {
+  transition: none !important;
 }
 
 #next {

@@ -48,12 +48,10 @@ function backflip(){
     backstart = !backstart;
     if (backstart) {
         // Start on English
-        cardit.classList.add("flipped");
         whichFront.dataset.aslorenglish = "eng";
         whichFrontImg.src = "media/ENG.svg";
     } else {
         // Start on ASL
-        cardit.classList.remove("flipped");
         whichFront.dataset.aslorenglish = "asl";
         whichFrontImg.src = "media/ASL.svg";
     }
@@ -77,7 +75,11 @@ async function nextCard(){
     // increments and protects against overflow
     // needs to use special modulo formula because js is wack
     currentCard = trueMod(currentCard+1, cardList.length);
-
+    cardit.classList.add("no-transition");
+    cardit.classList.remove("flipped");
+    requestAnimationFrame(() => {
+        cardit.classList.remove("no-transition");
+    });
     if (backstart) {
         showENGCard();
     } else {
@@ -89,7 +91,11 @@ async function previousCard(){
 	// decrements and protects against overflow
 	// needs to use special modulo formula because js is wack
 	currentCard = trueMod(currentCard-1, cardList.length);
-
+    cardit.classList.add("no-transition");
+    cardit.classList.remove("flipped");
+    requestAnimationFrame(() => {
+        cardit.classList.remove("no-transition");
+    });
     if (backstart) {
         showENGCard();
     } else {
@@ -129,7 +135,7 @@ function goBack(){
     window.location.href = "index.html";
 }
 
-async function shuffle(){
+function shuffle(){
     for (let i = cardList.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [cardList[i], cardList[j]] = [cardList[j], cardList[i]];
