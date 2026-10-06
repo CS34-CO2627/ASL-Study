@@ -5,7 +5,7 @@
 	--color-lightText: #ffe57b;
 	--color-background1: #7dbd77;
 	--color-background2: #44953c;
-	--color-background3: #fbd100;
+	--color-background3: #ffe57b;
 	--color-background4: #124500;
 
 	/* Debug coloring
@@ -47,6 +47,7 @@ main {
 }
 
 footer {
+	font-weight:600;
 	height: 50px;
 	bottom: 0px;
 	margin: 0;
@@ -146,7 +147,7 @@ footer {
 
 dialog {
 	border-radius: 1rem;
-	border: 2px solid var(--color-background3);
+	border: 3px solid var(--color-darkText);
 	background-color: var(--color-background1);
 }
 
@@ -229,7 +230,9 @@ dialog::backdrop{
 	height: 5rem;
 	background-color: var(--color-background3);
 	border-radius: 1em;
-	border-width: 2px;
+	border-width: 0px;
+	outline: 3px solid currentColor;
+	outline-offset: 0;
 	cursor: pointer;
 	color: inherit;
 }
