@@ -173,7 +173,7 @@ dialog::backdrop{
 	gap: 3rem;
 }
 
-#container {
+#flashcardsFlexDiv {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -184,7 +184,7 @@ dialog::backdrop{
 	perspective: 1000px;
 }
 
-#cardi {
+#perspectiveCardDiv {
     position: relative;
     width: 100%;
     height: 100%;
@@ -193,7 +193,7 @@ dialog::backdrop{
     cursor: pointer;
 }
 
-#cardi.flipped {
+#perspectiveCardDiv.flipped {
     transform: rotateX(180deg);
 }
 
@@ -224,7 +224,7 @@ dialog::backdrop{
     top: 3%;
 }
 
-#prev, #next {
+#previousCardButton, #nextCardButton {
 	font-size: 2rem;
 	width: 10rem;
 	height: 5rem;

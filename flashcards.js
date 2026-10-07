@@ -2,11 +2,11 @@ let cardList = [];
 let backstart = false;
 const flipStartTerm = document.getElementById("flipStartTerm");
 let currentCard = 0;
-const cardit = document.getElementById("cardi");
+const perspectiveCardDiv = document.getElementById("perspectiveCardDiv");
 const front = document.getElementById("front");
 const back = document.getElementById("back");
-const frontside_number = document.getElementById("frontside-number");
-const backside_number = document.getElementById("backside-number");
+const frontsideNumber = document.getElementById("frontsideNumber");
+const backsideNumber = document.getElementById("backsideNumber");
 const whichFront = document.getElementById("whichFront");
 const whichFrontImg = whichFront.querySelector("img");
 
@@ -60,25 +60,25 @@ function backflip(){
 function showASLCard() {
     front.lastChild.textContent = cardList[currentCard].aslside;
     back.lastChild.textContent = cardList[currentCard].engside;
-    frontside_number.textContent = (currentCard + 1) + " / " + cardList.length;
-    backside_number.textContent = (currentCard + 1) + " / " + cardList.length;
+    frontsideNumber.textContent = (currentCard + 1) + " / " + cardList.length;
+    backsideNumber.textContent = (currentCard + 1) + " / " + cardList.length;
 }
 
 function showENGCard() {
     front.lastChild.textContent = cardList[currentCard].engside;
     back.lastChild.textContent = cardList[currentCard].aslside;
-    frontside_number.textContent = (currentCard + 1) + " / " + cardList.length;
-    backside_number.textContent = (currentCard + 1) + " / " + cardList.length;
+    frontsideNumber.textContent = (currentCard + 1) + " / " + cardList.length;
+    backsideNumber.textContent = (currentCard + 1) + " / " + cardList.length;
 }
 
 async function nextCard(){
     // increments and protects against overflow
     // needs to use special modulo formula because js is wack
     currentCard = trueMod(currentCard+1, cardList.length);
-    cardit.classList.add("no-transition");
-    cardit.classList.remove("flipped");
+    perspectiveCardDiv.classList.add("no-transition");
+    perspectiveCardDiv.classList.remove("flipped");
     requestAnimationFrame(() => {
-        cardit.classList.remove("no-transition");
+        perspectiveCardDiv.classList.remove("no-transition");
     });
     if (backstart) {
         showENGCard();
@@ -91,10 +91,10 @@ async function previousCard(){
 	// decrements and protects against overflow
 	// needs to use special modulo formula because js is wack
 	currentCard = trueMod(currentCard-1, cardList.length);
-    cardit.classList.add("no-transition");
-    cardit.classList.remove("flipped");
+    perspectiveCardDiv.classList.add("no-transition");
+    perspectiveCardDiv.classList.remove("flipped");
     requestAnimationFrame(() => {
-        cardit.classList.remove("no-transition");
+        perspectiveCardDiv.classList.remove("no-transition");
     });
     if (backstart) {
         showENGCard();
@@ -118,7 +118,7 @@ document.addEventListener("keydown", async function(event) {
         case "s":
         case "ArrowUp":
         case "ArrowDown":
-            cardit.classList.toggle("flipped");
+            perspectiveCardDiv.classList.toggle("flipped");
             break;
         case "ArrowLeft":
         case "a":
