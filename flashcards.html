@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
-  <title>ASL Study - Flashcards</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" id="favicon" type="image/svg+xml" href="media/ASL.svg">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+	<title>ASL Study - Flashcards</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="icon" id="favicon" type="image/svg+xml" href="media/ASL.svg">
 </head>
-<body id = "body">
-  <div id = "fullcard">
-    <div id ="container">
-      <button onclick="previousCard()" id="prev">Previous</button>
-      <div id="cardi" onclick="flip(this)">
-        <button class="card" id="front">
-          <p id="frontside-number" class="sideNumber"></p>
-        </button>
 
-        <button class="card" id="back">
-          <p id="backside-number" class="sideNumber"></p>
-        </button>
-      </div>
-      <button onclick="nextCard()" id="next">Next</button>
-    </div>
+<body id="body">
+	<div id="fullcard">
+		<div id="flashcardsFlexDiv">
+			<button onclick="previousCard()" id="previousCardButton">Previous</button>
+			<div id="perspectiveCardDiv" onclick="flip(this)">
+				<button class="card" id="front">
+					<p id="frontsideNumber" class="sideNumber"></p>
+				</button>
+
+				<button class="card" id="back">
+					<p id="backsideNumber" class="sideNumber"></p>
+				</button>
+			</div>
+			<button onclick="nextCard()" id="nextCardButton">Next</button>
+		</div>
 
 
-    <div class="roundedLargeElement divButtons optionButtonDiv">
-      <div id="bottomButtons" class="bottomDiv">
-        <button class="buttons setupButton" onclick="shuffle()">Shuffle</button>
+		<div class="roundedLargeElement divButtons optionButtonDiv">
+			<div id="bottomButtons" class="bottomDiv">
+				<button class="buttons setupButton" onclick="shuffle()">Shuffle</button>
 
-        <button id="whichFront" data-aslorenglish="asl" class="buttons setupButton" onclick="backflip()">
-          <img src="media/ASL.svg" class="buttonIcon"/>
-        </button>
+				<button id="whichFront" data-aslorenglish="asl" class="buttons setupButton" onclick="backflip()">
+					<img src="media/ASL.svg" class="buttonIcon" />
+				</button>
 
-        <button class="buttons setupButton" onclick="goBack()"><img src="media/Home.png" class="buttonIcon"/></button>
-      </div>
-    </div>
-  </div>
+				<button class="buttons setupButton" onclick="goBack()"><img src="media/Home.png"
+						class="buttonIcon" /></button>
+			</div>
+		</div>
+	</div>
 
-  <script src="flashcards.js"></script>
+	<script src="flashcards.js"></script>
 
 </body>
+
 </html>
