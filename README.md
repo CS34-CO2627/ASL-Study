@@ -1,6 +1,6 @@
 # ASL Study
 ASL Study was created for Patrick Henry High School's ASL program. Our website is more streamlined compared to Quizlet, and has zero ads. Furthermore, we load the ASL videos in a way that does no cause the webpage to crash, allowing students to experience better performance and the ability to use this website on their Chromebooks.
-This website is compatibly with computer and phone screens.
+This website is compatible with computer and phone screens.
 
 Please read the instructions below that explain how to use this website.
 
