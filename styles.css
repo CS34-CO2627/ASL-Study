@@ -75,8 +75,8 @@ footer {
 #headerDiv{
     text-align: center;
     font-size: clamp(0.01rem, 6vw, 1.2rem);
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 0em;
+    padding-bottom: 0em;
     margin-bottom: 1em;
     margin-top: 1em;
 }
