@@ -1,6 +1,8 @@
 # Default ignored files
 /shelf/
-/workspace.xml
+# Added by the coop
+/.idea/
+debug.log
 # Editor-based HTTP Client requests
 /httpRequests/
 # Ignored default folder with query files
