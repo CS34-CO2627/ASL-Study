@@ -1,11 +1,166 @@
 {
     "Unit1": {
-        "1": {"engside":"ENG U1:1", "aslside":"ASL U1:1"},
-        "2": {"engside":"ENG U1:2", "aslside":"ASL U1:2"},
-        "3": {"engside":"ENG U1:3", "aslside":"ASL U1:3"},
-        "4": {"engside":"ENG U1:4", "aslside":"ASL U1:4"},
-        "5": {"engside":"ENG U1:5", "aslside":"ASL U1:5"}
-    },
+  "1": {
+    "text": "NO",
+    "gif": "https://o.quizlet.com/JbjJZpzMF8VhT-eN4G4bwA.gif"
+  },
+  "2": {
+    "text": "BOY BOY 1X LIKE ICE-CREAM",
+    "gif": "https://o.quizlet.com/ab8l53S8TZlXIPMqnt5y1w.gif"
+  },
+  "3": {
+    "text": "BROTHER BROTHER WANT NEW CAR",
+    "gif": "https://o.quizlet.com/E-MiBuec7eqvPF9ZZAJTiQ.gif"
+  },
+  "4": {
+    "text": "DAD/FATHER MY DAD FAVORITE COLOR BLUE",
+    "gif": "https://o.quizlet.com/fd252tRXAT9P5YlIDrEomQ.gif"
+  },
+  "5": {
+    "text": "DEAF WHITE CAT THERE DEAF",
+    "gif": "https://o.quizlet.com/QpxaMYuPL48R3-GJ5ry3-w.gif"
+  },
+  "6": {
+    "text": "DON'T-KNOW I DON'T-KNOW SPANISH",
+    "gif": "https://o.quizlet.com/FA-tc2xpDBwcjfytj4vYgw.gif"
+  },
+  "7": {
+    "text": "FROM MY TEACHER FROM #LA",
+    "gif": "https://o.quizlet.com/gMVaHFWDq4GrHIRLX74v-A.gif"
+  },
+  "8": {
+    "text": "GIRL GIRL",
+    "gif": "https://o.quizlet.com/kgEK7sQtdNSiBJ1pjxxptg.gif"
+  },
+  "9": {
+    "text": "HARD OF HEARING",
+    "gif": "https://o.quizlet.com/v5BcXWtyyTQDJBdMbdEX8g.gif"
+  },
+  "10": {
+    "text": "HE/SHE/IT/THEY (singular)",
+    "gif": "https://o.quizlet.com/5JlvM2ayN-.9fBcj-8ZIhg.gif"
+  },
+  "11": {
+    "text": "HEARING",
+    "gif": "https://o.quizlet.com/8KYVBvQZv1AN43MfolE5tg.gif"
+  },
+  "12": {
+    "text": "HELLO",
+    "gif": "https://o.quizlet.com/GLnjdFQfXuqI2hHYvVuoTA.gif"
+  },
+  "13": {
+    "text": "HIS/HERS/ITS",
+    "gif": "https://o.quizlet.com/woy2P4FWsxjs43vEA-TVhA.gif"
+  },
+  "14": {
+    "text": "I/ME",
+    "gif": "https://o.quizlet.com/e71Hbd8oNpajhvW.AkWPjg.gif"
+  },
+  "15": {
+    "text": "LIVE/LIFE/ALIVE",
+    "gif": "https://o.quizlet.com/KGXZWg9fef81TGfvNT-rXQ.gif"
+  },
+  "16": {
+    "text": "LIVE/LIFE/ALIVE 2",
+    "gif": "https://o.quizlet.com/E0dcwFJANkF75khx0k1obg.gif"
+  },
+  "17": {
+    "text": "MAN",
+    "gif": "https://o.quizlet.com/i0fUoM3-B8FFvovhFA5Mlw.gif"
+  },
+  "18": {
+    "text": "MEET",
+    "gif": "https://o.quizlet.com/HaGdl-JR9E4DHcrESGwrfw.gif"
+  },
+  "19": {
+    "text": "MOM",
+    "gif": "https://o.quizlet.com/LAMWPwRFBT2XnBcPwcw.4g.gif"
+  },
+  "20": {
+    "text": "MY/MINE",
+    "gif": "https://o.quizlet.com/x0s3yS4ZIRdDKZbhTAzDPw.gif"
+  },
+  "21": {
+    "text": "NAME",
+    "gif": "https://o.quizlet.com/xFrEbWf2QbadmHXtfoxaHA.gif"
+  },
+  "22": {
+    "text": "NEW YORK",
+    "gif": "https://o.quizlet.com/zz5Wz.Dq3b9B.I4aN9cRDg.gif"
+  },
+  "23": {
+    "text": "NICE",
+    "gif": "https://o.quizlet.com/GPKfg30axt6ZU3mjOb5SpA.gif"
+  },
+  "24": {
+    "text": "NOT",
+    "gif": "https://o.quizlet.com/RKAViyr6lJiCKh2fSJI1lA.gif"
+  },
+  "25": {
+    "text": "OUR/OURS",
+    "gif": "https://o.quizlet.com/5LdLxDZWFYattUHZUngu6w.gif"
+  },
+  "26": {
+    "text": "SISTER",
+    "gif": "https://o.quizlet.com/G-5hk10iBbOmW8tH1arSoQ.gif"
+  },
+  "27": {
+    "text": "STUDENT",
+    "gif": "https://o.quizlet.com/f9Qq7U-I5-Rhxek4TnezYw.gif"
+  },
+  "28": {
+    "text": "TEACHER",
+    "gif": "https://o.quizlet.com/zaOtNvdDg9zmIwnyTocftg.gif"
+  },
+  "29": {
+    "text": "THEIR/THEIRS (plural)",
+    "gif": "https://o.quizlet.com/X1P4G92LDof2O94wr943.w.gif"
+  },
+  "30": {
+    "text": "THEY/THEM (plural)",
+    "gif": "https://o.quizlet.com/tvTQDS.8NwvDtaSWYl6cqA.gif"
+  },
+  "31": {
+    "text": "WE/US",
+    "gif": "https://o.quizlet.com/pp5LnEyYqpaCMlnDjc2RoQ.gif"
+  },
+  "32": {
+    "text": "WHERE",
+    "gif": "https://o.quizlet.com/.cf04cvq4ivUJU58mYmZtA.gif"
+  },
+  "33": {
+    "text": "WHO",
+    "gif": "https://o.quizlet.com/2v5NKtrEtS33xfR9CTSR9Q.gif"
+  },
+  "34": {
+    "text": "WOMAN",
+    "gif": "https://o.quizlet.com/OHPnrAG943RHPuolXTHBaA.gif"
+  },
+  "35": {
+    "text": "YES",
+    "gif": "https://o.quizlet.com/JLk3qy7onpGpVvga62Cwtw.gif"
+  },
+  "36": {
+    "text": "YOU (singular)",
+    "gif": "https://o.quizlet.com/9DgtPbR02f3vI-N5BzYw8w.gif"
+  },
+  "37": {
+    "text": "YOU-ALL",
+    "gif": "https://o.quizlet.com/t8TFANiHGDbg1h2ZQQSyqQ.gif"
+  },
+  "38": {
+    "text": "YOUR/YOURS (singular)",
+    "gif": "https://o.quizlet.com/1yMJsGEB1.4qwz-M2jjtKQ.gif"
+  },
+  "39": {
+    "text": "YOUR (plural)",
+    "gif": "https://o.quizlet.com/phiIQJn7cel3kEWRS0U6Ew.gif"
+  },
+  "40": {
+    "text": "Mastered (1) Select this one CALIFORNIA I FROM CALIFORNIA",
+    "gif": "https://o.quizlet.com/E45fQ6OrBQ8FSl5y3Jvntw.gif"
+  }
+}
 
     "Unit2": {
         "1": {"engside":"ENG U2:1", "aslside":"ASL U2:1"},
