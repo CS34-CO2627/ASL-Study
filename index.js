@@ -13,15 +13,15 @@ setUpUnits();
 
 function setUpUnits(){
 
-    for (let i = 1; i <= 30; i++){
+    for (let i = 1; i <= 24; i++){
         const currentButton = document.createElement("button");
         currentButton.className = "unitButton buttons";
         currentButton.id = `unit${i}`;
         currentButton.dataset.uniton = "true";
         currentButton.onclick = function() {decideColorOfButton(`unit${i}`);};
-        if (i <= 10){
+        if (i <= 8){
             document.getElementById("upToTenUnits").appendChild(currentButton);
-        } else if (i <= 20){
+        } else if (i <= 16){
             document.getElementById("upToTwentyUnits").appendChild(currentButton);
         } else {
             document.getElementById("upToThirtyUnits").appendChild(currentButton);
