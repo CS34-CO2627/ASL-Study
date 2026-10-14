@@ -7,11 +7,15 @@ const notEnoughUnitsPopup = document.getElementById("notEnoughUnits");
 notEnoughUnitsPopup.querySelector(".close-btn").addEventListener("click", () => {
     notEnoughUnitsPopup.close();
 });
+const helppopup = document.getElementById("help");
+helppopup.querySelector(".close-btn").addEventListener("click", () => {
+	helppopup.close();
+})
 
 
 setUpUnits();
 
-function setUpUnits(){
+function setUpUnits() {
 
     for (let i = 1; i <= 30; i++){
         const currentButton = document.createElement("button");
