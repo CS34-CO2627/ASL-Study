@@ -189,53 +189,5 @@
         "3": {"engside":"ENG U24:3", "aslside":"ASL U24:3"},
         "4": {"engside":"ENG U24:4", "aslside":"ASL U24:4"},
         "5": {"engside":"ENG U24:5", "aslside":"ASL U24:5"}
-    },
-
-    "Unit25": {
-        "1": {"engside":"ENG U25:1", "aslside":"ASL U25:1"},
-        "2": {"engside":"ENG U25:2", "aslside":"ASL U25:2"},
-        "3": {"engside":"ENG U25:3", "aslside":"ASL U25:3"},
-        "4": {"engside":"ENG U25:4", "aslside":"ASL U25:4"},
-        "5": {"engside":"ENG U25:5", "aslside":"ASL U25:5"}
-    },
-
-    "Unit26": {
-        "1": {"engside":"ENG U26:1", "aslside":"ASL U26:1"},
-        "2": {"engside":"ENG U26:2", "aslside":"ASL U26:2"},
-        "3": {"engside":"ENG U26:3", "aslside":"ASL U26:3"},
-        "4": {"engside":"ENG U26:4", "aslside":"ASL U26:4"},
-        "5": {"engside":"ENG U26:5", "aslside":"ASL U26:5"}
-    },
-
-    "Unit27": {
-        "1": {"engside":"ENG U27:1", "aslside":"ASL U27:1"},
-        "2": {"engside":"ENG U27:2", "aslside":"ASL U27:2"},
-        "3": {"engside":"ENG U27:3", "aslside":"ASL U27:3"},
-        "4": {"engside":"ENG U27:4", "aslside":"ASL U27:4"},
-        "5": {"engside":"ENG U27:5", "aslside":"ASL U27:5"}
-    },
-
-    "Unit28": {
-        "1": {"engside":"ENG U28:1", "aslside":"ASL U28:1"},
-        "2": {"engside":"ENG U28:2", "aslside":"ASL U28:2"},
-        "3": {"engside":"ENG U28:3", "aslside":"ASL U28:3"},
-        "4": {"engside":"ENG U28:4", "aslside":"ASL U28:4"},
-        "5": {"engside":"ENG U28:5", "aslside":"ASL U28:5"}
-    },
-
-    "Unit29": {
-        "1": {"engside":"ENG U29:1", "aslside":"ASL U29:1"},
-        "2": {"engside":"ENG U29:2", "aslside":"ASL U29:2"},
-        "3": {"engside":"ENG U29:3", "aslside":"ASL U29:3"},
-        "4": {"engside":"ENG U29:4", "aslside":"ASL U29:4"},
-        "5": {"engside":"ENG U29:5", "aslside":"ASL U29:5"}
-    },
-
-    "Unit30": {
-        "1": {"engside":"ENG U30:1", "aslside":"ASL U30:1"},
-        "2": {"engside":"ENG U30:2", "aslside":"ASL U30:2"},
-        "3": {"engside":"ENG U30:3", "aslside":"ASL U30:3"},
-        "4": {"engside":"ENG U30:4", "aslside":"ASL U30:4"},
-        "5": {"engside":"ENG U30:5", "aslside":"ASL U30:5"}
     }
 }
