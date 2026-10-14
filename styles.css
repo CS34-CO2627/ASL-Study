@@ -45,6 +45,9 @@ body {
 
 main {
 	flex: 1;
+	position: relative;
+	padding-bottom: 20px;
+
 }
 
 footer {
@@ -270,10 +273,11 @@ dialog::backdrop{
 }
 
 .helpDiv {
-	align-self: right;
+	align-self: flex-end;
 	justify-self: right;
-	padding-right: 16px;
-	padding-bottom: 16px;
+	right: 20px;
+	position: sticky;
+	bottom: 20px;
 }
 
 #help {
@@ -281,7 +285,6 @@ dialog::backdrop{
 	width: fit-content;
 	min-width: 190px;
 	justify-items: center;
-
 }
 
 
