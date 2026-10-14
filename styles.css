@@ -75,10 +75,10 @@ footer {
 #headerDiv{
     text-align: center;
     font-size: clamp(0.01rem, 6vw, 1.2rem);
-    padding-top: 0rem;
-    padding-bottom: 0rem;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    padding-top: 0em;
+    padding-bottom: 0em;
+    margin-bottom: 1em;
+    margin-top: 1em;
 }
 
 .divButtons{
@@ -95,7 +95,7 @@ footer {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: 1rem;
+	gap: 1em;
 	grid-column: 1 / -1;
 	width: 100%;
 }
@@ -133,8 +133,8 @@ footer {
 }
 
 .unitButton{
-	width: 5rem;
-	height: 5rem;
+	width: 5em;
+	height: 5em;
 }
 
 .unitText{
@@ -229,7 +229,7 @@ dialog::backdrop{
 	width: 10rem;
 	height: 5rem;
 	background-color: var(--color-background3);
-	border-radius: 1rem;
+	border-radius: 1em;
 	border-width: 0px;
 	outline: 3px solid currentColor;
 	outline-offset: 0;
@@ -259,7 +259,7 @@ dialog::backdrop{
 
 .buttons{
 	background-color: var(--color-background3);
-	border-radius: 1rem;
+	border-radius: 1em;
 	border-width: 0px;
 	outline: 3px solid currentColor;
 	outline-offset: 0;
@@ -269,27 +269,6 @@ dialog::backdrop{
 }
 
 .setupButton{
-	width: 7rem;
-	height: 7rem;
-}
-
-@media (max-width: 600px) and (min-width: 300px) {
-	html {
-		font-size: 30%;
-	}
-}
-@media (max-width: 300px) {
-	html {
-		font-size: 15%;
-	}
-}
-@media (min-width: 600px) and (max-width: 900px) {
-	html {
-		font-size: 50%;
-	}
-}
-@media (min-width: 900px) and (max-width: 1200px) {
-	html {
-		font-size: 75%;
-	}
+	width: 7em;
+	height: 7em;
 }
