@@ -82,8 +82,10 @@ footer {
 }
 
 .divButtons{
-    grid-template-columns: repeat(auto-fit, 5rem);
+    grid-template-columns: repeat(auto-fit, 6rem);
     gap: 1rem;
+	row-gap: 1.3rem;
+    column-gap: 0.3rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
     margin-bottom: 1rem;
