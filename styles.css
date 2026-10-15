@@ -213,6 +213,8 @@ dialog::backdrop{
 	height: 30rem;
 	border: none;
 	perspective: 1000px;
+}
+
 body {
     display: flex;
     flex-direction: column;
