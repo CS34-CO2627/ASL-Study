@@ -12,7 +12,6 @@ notEnoughUnitsPopup.querySelector(".close-btn").addEventListener("click", () => 
 setUpUnits();
 
 function setUpUnits(){
-
     for (let i = 1; i <= 24; i++){
         const currentButton = document.createElement("button");
         currentButton.className = "unitButton buttons";
