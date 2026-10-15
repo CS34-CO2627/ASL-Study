@@ -13,7 +13,7 @@ async function bootCards(){
 		listContainer.style.gridTemplateColumns = "none";
 		listContainer.style.justifyContent = "normal";
 
-		document.getElementById("titleDiv").innerHTML = "<h1>ASL Study - Unit " + units +" Selected</h1>"
+		document.getElementById("headerDiv").innerHTML = "<h1>ASL Study - Unit " + units +" Selected</h1>"
 
     for (let i = 1;i <= 30;i++){
         if (units.includes(i)){
