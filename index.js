@@ -10,7 +10,7 @@ notEnoughUnitsPopup.querySelector(".close-btn").addEventListener("click", () => 
 const helppopup = document.getElementById("help");
 helppopup.querySelector(".close-btn").addEventListener("click", () => {
 	helppopup.close();
-})
+});
 
 
 setUpUnits();

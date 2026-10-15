@@ -9,6 +9,11 @@ const frontsideNumber = document.getElementById("frontsideNumber");
 const backsideNumber = document.getElementById("backsideNumber");
 const whichFront = document.getElementById("whichFront");
 const whichFrontImg = whichFront.querySelector("img");
+const helppopup = document.getElementById("help");
+
+helppopup.querySelector(".close-btn").addEventListener("click", () => {
+	helppopup.close();
+});
 
 function flip(element){
     element.classList.toggle("flipped");
