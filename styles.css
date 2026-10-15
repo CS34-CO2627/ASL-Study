@@ -82,24 +82,21 @@ footer {
 }
 
 .divButtons{
-    grid-template-columns: repeat(auto-fit, 6rem);
-    gap: 1rem;
-	row-gap: 1.3rem;
-    column-gap: 0.3rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	gap: 2rem;
+
+    padding: 2rem;
     margin-bottom: 1rem;
     margin-top: 0;
     top: 0;
 }
 
 .bottomDiv {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 1em;
-	grid-column: 1 / -1;
-	width: 100%;
+	display: contents;
 }
 
 .optionButtonDiv {
@@ -260,6 +257,9 @@ dialog::backdrop{
 }
 
 .buttons{
+	flex-shrink: 0;
+	flex-grow: 0;
+
 	background-color: var(--color-background3);
 	border-radius: 1em;
 	border-width: 0px;
