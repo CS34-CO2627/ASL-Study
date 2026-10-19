@@ -20,6 +20,7 @@ function setUpUnits() {
     for (let i = 1; i <= 24; i++){
         const currentButton = document.createElement("button");
         currentButton.className = "unitButton buttons";
+		currentButton.title = ("Unit " + i);
         currentButton.id = `unit${i}`;
         currentButton.dataset.uniton = "true";
         currentButton.onclick = function() {decideColorOfButton(`unit${i}`);};
@@ -69,6 +70,7 @@ function decideImageOfButton(buttonId){
         myButt.dataset.aslorenglish = "asl";
         myButtIcon.src = "media/ASL.svg"
     }
+	// myButt.title = ("Unit" + unitsSelected.indexOf(myButt));
 }
 
 function openSelected(){
