@@ -248,6 +248,10 @@ dialog::backdrop{
     animation: fadein 1.5s ease-in-out;
 }
 
+.no-transition {
+	transition: none !important;
+}
+
 #back {
     transform: rotateX(180deg);
 }

@@ -92,14 +92,14 @@ async function nextCard(){
     currentCard = trueMod(currentCard+1, cardList.length);
     perspectiveCardDiv.classList.add("no-transition");
     perspectiveCardDiv.classList.remove("flipped");
-    requestAnimationFrame(() => {
-        perspectiveCardDiv.classList.remove("no-transition");
-    });
     if (backstart) {
         showENGCard();
     } else {
         showASLCard();
     }
+    requestAnimationFrame(() => {
+        perspectiveCardDiv.classList.remove("no-transition");
+    });
 }
 
 async function previousCard(){
@@ -108,14 +108,14 @@ async function previousCard(){
 	currentCard = trueMod(currentCard-1, cardList.length);
     perspectiveCardDiv.classList.add("no-transition");
     perspectiveCardDiv.classList.remove("flipped");
-    requestAnimationFrame(() => {
-        perspectiveCardDiv.classList.remove("no-transition");
-    });
     if (backstart) {
         showENGCard();
     } else {
         showASLCard();
     }
+    requestAnimationFrame(() => {
+        perspectiveCardDiv.classList.remove("no-transition");
+    });
 }
 
 // key listener for space with some extra kaleb stuff?
