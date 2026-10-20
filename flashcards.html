@@ -15,10 +15,12 @@
 			<div id="perspectiveCardDiv" onclick="flip(this)">
 				<button class="card" id="front">
 					<p id="frontsideNumber" class="sideNumber"></p>
+					<p class="mainText"></p>
 				</button>
 
 				<button class="card" id="back">
 					<p id="backsideNumber" class="sideNumber"></p>
+					<p class="mainText"></p>
 				</button>
 			</div>
 			<button onclick="nextCard()" id="nextCardButton">Next</button>
@@ -30,11 +32,10 @@
 				<button class="buttons setupButton" onclick="shuffle()">Shuffle</button>
 
 				<button id="whichFront" data-aslorenglish="asl" class="buttons setupButton" onclick="backflip()">
-					<img src="media/ASL.svg" class="buttonIcon" />
+					<img src="media/ASL.svg" class="buttonIcon"/>
 				</button>
 
-				<button class="buttons setupButton" onclick="goBack()"><img src="media/Home.png"
-						class="buttonIcon" /></button>
+				<button class="buttons setupButton" onclick="goBack()"><img src="media/Home.png" class="buttonIcon"/></button>
 			</div>
 		</div>
 	</div>

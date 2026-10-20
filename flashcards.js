@@ -63,15 +63,25 @@ function backflip(){
 }
 
 function showASLCard() {
-    front.lastChild.textContent = cardList[currentCard].aslside;
-    back.lastChild.textContent = cardList[currentCard].engside;
+    front.querySelector("img")?.remove();
+    back.querySelector("img")?.remove();
+    front.querySelector(".mainText").textContent = "";
+    back.querySelector(".mainText").textContent = cardList[currentCard].text;
+    let imge = document.createElement('img');
+    front.appendChild(imge);
+    imge.src = cardList[currentCard].gif;
     frontsideNumber.textContent = (currentCard + 1) + " / " + cardList.length;
     backsideNumber.textContent = (currentCard + 1) + " / " + cardList.length;
 }
 
 function showENGCard() {
-    front.lastChild.textContent = cardList[currentCard].engside;
-    back.lastChild.textContent = cardList[currentCard].aslside;
+    front.querySelector("img")?.remove();
+    back.querySelector("img")?.remove();
+    back.querySelector(".mainText").textContent = "";
+    front.querySelector(".mainText").textContent = cardList[currentCard].text;
+    let imge = document.createElement('img');
+    back.appendChild(imge);
+    imge.src = cardList[currentCard].gif;
     frontsideNumber.textContent = (currentCard + 1) + " / " + cardList.length;
     backsideNumber.textContent = (currentCard + 1) + " / " + cardList.length;
 }
