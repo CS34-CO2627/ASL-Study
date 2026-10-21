@@ -279,4 +279,7 @@ dialog::backdrop{
 	#nextCardButton {
 		order: 2;
 	}
+	#perspectiveCardDiv {
+		width: 90vw;
+	}
 }
