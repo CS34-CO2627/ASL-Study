@@ -18,37 +18,37 @@
 
 		<div id="setupContainer" class="roundedLargeElement divButtons">
 				<div id="bottomButtons" class="bottomDiv">
-						<button id="clearButton" class="buttons setupButton" onclick="clearUnits()">
+						<button title="Clear the selected units" id="clearButton" class="buttons setupButton" onclick="clearUnits()">
 								<!--https://fontawesome.com/icons/classic/regular/trash-can-->
 								<img src="media/CLEAR.svg" class="buttonIcon"/>
 						</button>
 
-						<button id="whichFront" data-aslorenglish="asl" class="buttons setupButton" onclick="decideImageOfButton('whichFront')">
+						<button title="Switch the front between ASL and English" id="whichFront" data-aslorenglish="asl" class="buttons setupButton" onclick="decideImageOfButton('whichFront')">
 								<img src="media/ASL.svg" class="buttonIcon"/>
 						</button>
 
-						<button id="openButton" class="buttons setupButton" onclick="openSelected()">Start</button>
+						<button title="Begin reviewing flashcards" id="openButton" class="buttons setupButton" onclick="openSelected()">Start</button>
 
-						<button id="copyButton"class="buttons setupButton" onclick="copySelected()">
+						<button title="Copy the selected units to share" id="copyButton"class="buttons setupButton" onclick="copySelected()">
 								<img src="media/CLIPBOARD.svg" class="buttonIcon"/>
 						</button>
 						<dialog id="copy">
 								<p>Content copied to clipboard!</p>
-								<button class="close-btn" aria-label="close">&times;</button>
+								<button title="close" class="close-btn" aria-label="close">&times;</button>
 						</dialog>
 						<dialog id="notEnoughUnits">
 								<p>Not enough units selected!</p>
-								<button class="close-btn" aria-label="close">&times;</button>
+								<button title="close" class="close-btn" aria-label="close">&times;</button>
 						</dialog>
 				</div>
 		</div>
 
 		<div class="helpDiv">
-			<button class="helpButton" onclick="helppopup.showModal()">?</button>
+			<button title="Tutorial" class="helpButton" onclick="helppopup.showModal()">?</button>
 			<dialog id="help">
 				<p>How to use the unit selection page.</p>
 				<img src="media/ASL_HOME_HELP.svg" class="homeHelpImg"/>
-				<button class="close-btn" aria-label="close">&times;</button>
+				<button title="close" class="close-btn" aria-label="close">&times;</button>
 			</dialog>
 		</div>
 	</main>
