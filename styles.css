@@ -271,6 +271,7 @@ dialog::backdrop{
 @media only screen and (max-width: 767px){
 	.setupButton {
 		width: 9rem;
+		margin-bottom: 1rem;
 	}
 	#previousCardButton {
 		order: 1;
