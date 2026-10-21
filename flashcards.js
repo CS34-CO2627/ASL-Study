@@ -5,6 +5,7 @@ let currentCard = 0;
 const perspectiveCardDiv = document.getElementById("perspectiveCardDiv");
 const front = document.getElementById("front");
 const back = document.getElementById("back");
+const lazyCard = document.getElementById("lazy");
 const frontsideNumber = document.getElementById("frontsideNumber");
 const backsideNumber = document.getElementById("backsideNumber");
 const whichFront = document.getElementById("whichFront");
@@ -72,6 +73,49 @@ function showASLCard() {
     imge.src = cardList[currentCard].gif;
     frontsideNumber.textContent = (currentCard + 1) + " / " + cardList.length;
     backsideNumber.textContent = (currentCard + 1) + " / " + cardList.length;
+	lazyLoadASLImgs();
+}
+
+function isImageDownloaded(imageUrl) {
+	const hasMatchingRequest = performance.getEntriesByType('resource')
+    .some(entry => entry.name === imageUrl);
+
+	return hasMatchingRequest;
+}
+
+function lazyLoadASLImgs() {
+	// if it is the last card, only check that the previous img is loaded
+	if (currentCard + 1 == cardList.length) {
+		if (!isImageDownloaded(cardList[currentCard - 1].gif)) {
+			lazyLoadImg(cardList[currentCard - 1].gif);
+		}
+
+	}
+	// if it is the first card, only check that the next img and the last img is loaded
+	else if (currentCard == 0) {
+		if (!isImageDownloaded(cardList[currentCard + 1].gif)) {
+			lazyLoadImg(cardList[currentCard + 1].gif);
+		}
+		if (!isImageDownloaded(cardList[cardList.length - 1].gif)) {
+			lazyLoadImg(cardList[cardList.length - 1].gif);
+		}
+	}
+	// for all other cards, check that the prev and next img is loaded
+	else {
+		if (!isImageDownloaded(cardList[currentCard + 1]).gif) {
+			lazyLoadImg(cardList[currentCard + 1].gif);
+		}
+		if (!isImageDownloaded(cardList[currentCard - 1].gif)) {
+			lazyLoadImg(cardList[currentCard - 1].gif);
+		}
+	}
+}
+
+function lazyLoadImg(imageUrl) {
+	lazyCard.querySelector("img")?.remove();
+	let imge = document.createElement('img');
+	lazyCard.appendChild(imge);
+	imge.src = imageUrl;
 }
 
 function showENGCard() {

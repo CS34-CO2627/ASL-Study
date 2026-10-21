@@ -22,16 +22,18 @@
 					<p id="backsideNumber" class="sideNumber"></p>
 					<p class="mainText"></p>
 				</button>
+
 			</div>
 			<button title="Go to the next card" onclick="nextCard()" id="nextCardButton">Next</button>
 		</div>
 
+		<div class="lazyLoadCard" id="lazy"></div>
 
 		<div class="roundedLargeElement divButtons optionButtonDiv">
 			<div id="bottomButtons" class="bottomDiv">
 				<button title="Shuffle the cards" class="buttons setupButton" onclick="shuffle()">Shuffle</button>
 
-      <button title="Switch the front between ASL and English" id="whichFront" data-aslorenglish="asl" class="buttons setupButton" onclick="backflip()">
+        <button title="Switch the front between ASL and English" id="whichFront" data-aslorenglish="asl" class="buttons setupButton" onclick="backflip()">
 					<img src="media/ASL.svg" class="buttonIcon"/>
 				</button>
 
