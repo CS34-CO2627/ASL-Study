@@ -306,6 +306,7 @@ dialog::backdrop{
 }
 
 .homeHelpImg {
+	max-width: 90%;
 	height: 85%;
 
 }
