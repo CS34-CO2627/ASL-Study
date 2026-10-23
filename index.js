@@ -50,8 +50,8 @@ function decideColorOfButton(buttonId){
         }
     }
     else {
-        unitButton.style.backgroundColor = "var(--color-background3)";
-        unitButton.style.color = "var(--color-darkText)";
+        unitButton.style.backgroundColor = '';
+        unitButton.style.color = '';
         unitButton.dataset.uniton = "true";
         if (buttonId != "aslorenglish"){
             unitsSelected.splice(unitsSelected.indexOf(unitButton),1);
