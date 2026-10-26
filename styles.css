@@ -310,6 +310,7 @@ dialog::backdrop{
 	font-size: 30px;
 	background-color: var(--color-lightText);
 	color: var(--color-background4);
+	cursor: pointer;
 }
 
 .homeHelpImg {
