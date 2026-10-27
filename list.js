@@ -13,9 +13,9 @@ async function bootCards(){
 		listContainer.style.gridTemplateColumns = "none";
 		listContainer.style.justifyContent = "normal";
 
-		document.getElementById("headerDiv").innerHTML = "<h1>ASL Study - Unit " + units +" Selected</h1>"
+		document.getElementById("headerDiv").innerHTML = "<h1>ASL Study - " + ((units.length > 1) ? "Units" : "Unit") + " " + units.join(", ") +" Selected</h1>"
 
-    for (let i = 1;i <= 30;i++){
+    for (let i = 1;i <= 24;i++){
         if (units.includes(i)){
 					cardList.push([]);
           cardList[cardList.length - 1].push(...Object.values(data[`Unit${i}`]))
@@ -26,7 +26,7 @@ async function bootCards(){
 
 		for (let unit of cardList) {
 			for (let card of unit) {
-				listContainer.appendChild(document.createElement("div")).textContent = card["aslside"] + " " + card["engside"];
+				listContainer.appendChild(document.createElement("div")).innerHTML = card["text"] + " <img src=\"" + card["gif"] + "\">";
 			}
 			hr = document.createElement("hr");
 			hr.className = "splitter";
