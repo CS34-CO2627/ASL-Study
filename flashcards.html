@@ -11,7 +11,9 @@
 <body id="flashcardsBody">
 <div>
 	<div id="flashcardsFlexDiv">
-		<button title="Go to the previous card" onclick="previousCard()" id="previousCardButton" class="navigationButton">Previous</button>
+		<button title="Go to the previous card" onclick="previousCard()" id="previousCardButton" class="navigationButton">
+			<img src="media/NEXT.svg" class="buttonIcon"/>
+		</button>
 
 		<div id="perspectiveCardDiv" onclick="flip(this)">
 			<button title="Flip card" class="card" id="front">
@@ -25,7 +27,9 @@
 			</button>
 
 		</div>
-		<button title="Go to the next card" onclick="nextCard()" id="nextCardButton" class="navigationButton">Next</button>
+		<button title="Go to the next card" onclick="nextCard()" id="nextCardButton" class="navigationButton">
+			<img src="media/NEXT.svg" class="buttonIcon"/>
+		</button>
 	</div>
 
 	<div class="lazyLoadCard" id="lazy"></div>
