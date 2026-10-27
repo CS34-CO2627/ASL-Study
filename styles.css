@@ -235,6 +235,10 @@ dialog::backdrop{
 }
 
 .navigationButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
 	font-size: 2rem;
 	width: 10rem;
 	aspect-ratio: 1 / 1;
@@ -246,6 +250,17 @@ dialog::backdrop{
 	outline-offset: 0;
 	cursor: pointer;
 	color: inherit;
+}
+
+.navigationButton .buttonIcon {
+	display: block;
+	width: 80%;
+	height: 80%;
+	object-fit: contain;
+}
+
+#previousCardButton img {
+	transform: scaleX(-1);
 }
 
 .fadein{
@@ -328,10 +343,11 @@ dialog::backdrop{
 		width: min(16vw, 7rem);
 	}
 	#flashcardsBody .setupButton {
-		width: 23vw;
+		width: min(7rem, 23vw);
 	}
 	.navigationButton {
-		width: 37vw;
+		/* width: 37vw; */
+		width: min(11rem, 37vw);
 	}
 	#previousCardButton {
 		order: 1;
