@@ -254,8 +254,8 @@ dialog::backdrop{
 
 .navigationButton .buttonIcon {
 	display: block;
-	width: 60%;
-	height: 60%;
+	width: 80%;
+	height: 80%;
 	object-fit: contain;
 }
 
