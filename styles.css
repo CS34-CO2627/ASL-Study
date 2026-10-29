@@ -1,7 +1,7 @@
 :root {
 	/* PHHS Theme */
 	/* Teal Green #006D5B */
-	--color-darkText: #000000;
+	--color-darkText: #092300;
 	--color-lightText: #ffe57b;
 	--color-background1: #7dbd77;
 	--color-background2: #44953c;
@@ -9,8 +9,8 @@
 	--color-background4: #124500;
 
 	/* Debug coloring
-	To apply, uncomment this section
-	--color-darkText: #ff0000;
+	To apply, uncomment this section */
+	/* --color-darkText: #ff0000;
 	--color-lightText: #ee04ff;
 	--color-background1: #ffa600;
 	--color-background2: #6aff00;
@@ -247,7 +247,7 @@ dialog::backdrop{
 	background-color: var(--color-background3);
 	border-radius: 1em;
 	border-width: 0;
-	outline: 3px solid currentColor;
+	outline: 3px solid var(--color-background4);
 	outline-offset: 0;
 	cursor: pointer;
 	color: inherit;
@@ -292,7 +292,7 @@ dialog::backdrop{
 	background-color: var(--color-background3);
 	border-radius: 1em;
 	border-width: 0px;
-	outline: 3px solid currentColor;
+	outline: 3px solid var(--color-background4);
 	outline-offset: 0;
 	cursor: pointer;
 	color: inherit;
