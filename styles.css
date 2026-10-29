@@ -3,10 +3,11 @@
 	/* Teal Green #006D5B */
 	--color-darkText: #000000;
 	--color-lightText: #ffe57b;
-	--color-background1: #7dbd77;
-	--color-background2: #44953c;
-	--color-background3: #ffe57b;
-	--color-background4: #124500;
+
+	--color-background1: #7dbd77; /* Body and dialog background */
+	--color-background2: #44953c; /* Footer, container elements, and flashcard background */
+	--color-background3: #ffe57b; /* Navigation buttons and setup/unit buttons background */
+	--color-background4: #124500; /* Card/container borders, unit dividers, help button outline/text, and selected button background */
 
 	/* Debug coloring
 	To apply, uncomment this section
@@ -324,7 +325,7 @@ dialog::backdrop{
 	outline-offset: 0;
 	font-weight: bold;
 	font-size: 30px;
-	background-color: var(--color-lightText);
+	background-color: var(--color-background3);
 	color: var(--color-background4);
 	cursor: pointer;
 }
