@@ -1,3 +1,4 @@
+// use with if statement to do stuff only to the index.html
 const isIndex = document.body.id === "homeBody";
 
 // Runs a function with a 1-in-chance probability.
