@@ -315,7 +315,6 @@ dialog::backdrop{
 	justify-items: center;
 }
 
-
 .helpButton {
 	height: 40px;
 	width: 40px;
@@ -339,6 +338,10 @@ dialog::backdrop{
 	width: 7rem;
 	aspect-ratio: 1 / 1;
 }
+
+/* Easter Eggs*/
+
+/* Im so blank rn */
 
 @media only screen and (max-width: 1280px){
 	#homeBody .setupButton {
