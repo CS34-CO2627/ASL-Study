@@ -3,10 +3,11 @@
 	/* Teal Green #006D5B */
 	--color-darkText: #092300;
 	--color-lightText: #ffe57b;
-	--color-background1: #7dbd77;
-	--color-background2: #44953c;
-	--color-background3: #ffe57b;
-	--color-background4: #124500;
+
+	--color-background1: #386641; /* Body and dialog background */
+	--color-background2: #6a994e; /* Footer, container elements, and flashcard background */
+	--color-background3: #ffe57b; /* Navigation buttons and setup/unit buttons background */
+	--color-background4: #092300; /* Card/container borders, unit dividers, help button outline/text, and selected button background */
 
 	/* Debug coloring
 	To apply, uncomment this section */
