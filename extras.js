@@ -1,6 +1,17 @@
 // use with if statement to do stuff only to the index.html
 const isIndex = document.body.id === "homeBody";
 
+function myDudeBackground(){
+	let body = document.body;
+	body.style.backgroundImage = "url(media/dudeTile.png)";
+	body.style.backgroundRepeat = "repeat";
+	body.style.backgroundSize = "200px";
+	body.style.animation = "moveBackground 10s linear infinite";
+	bosy.stle.backgroundColor = window.getComputedStyle(root).getPropertyValue("--color-background1").trim()
+}
+
+rngFunction(myDudeBackground, 1);
+
 // Runs a function with a 1-in-chance probability.
 // Example: rngFunction(myEasterEgg, 10) gives a 1-in-10 chance.
 function rngFunction(iFunction, chance) {
