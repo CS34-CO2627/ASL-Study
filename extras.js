@@ -1,5 +1,18 @@
 // use with if statement to do stuff only to the index.html
 const isIndex = document.body.id === "homeBody";
+const pageStyle = document.querySelector(':root').style;
+
+dateFunction(medinaPurple(), new Date("2026-10-29"));
+
+function medinaPurple() {
+	pageStyle.setProperty('--color-darkText', '#');
+	pageStyle.setProperty('--color-lightText', '#EDE7F6');
+
+	pageStyle.setProperty('--color-background1', '');
+	pageStyle.setProperty('--color-background2', '');
+	pageStyle.setProperty('--color-background3', '');
+	pageStyle.setProperty('--color-background4', '');
+}
 
 // Runs a function with a 1-in-chance probability.
 // Example: rngFunction(myEasterEgg, 10) gives a 1-in-10 chance.
