@@ -16,7 +16,7 @@ async function bootCards(){
 	listContainer.style.paddingLeft = "0";
 	listContainer.style.paddingRight = "0";
 
-	document.getElementById("headerDiv").innerHTML = "<h1>ASL Study - " + ((units.length > 1) ? "Units" : "Unit") + " " + units.join(", ") +" Selected</h1>"
+	document.getElementById("headerDiv").innerHTML = "<h3> " + ((units.length > 1) ? "Units" : "Unit") + " " + units.join(", ") +" Selected</h3>"
 
     for (let i = 1;i <= 24;i++){
         if (units.includes(i)){

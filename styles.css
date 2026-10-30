@@ -31,6 +31,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	min-width: 200px;
 	font-family: Helvetica, Arial, sans-serif;
 	margin: 0;
 	height: 100%;
@@ -219,7 +220,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-		justify-content: center;
+	min-width: 200px;
+	justify-content: center;
 }
 
 #perspectiveCardDiv {
